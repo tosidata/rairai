@@ -1,0 +1,14 @@
+^LICENSE\.md$
+^vignettes/\.quarto$
+^vignettes/.*_files$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^records(/|$)
+^\.github/
+^AGENTS\.md$
+^TODO\.md$
+^dev\.R$
+^dev(/|$)
+^\.eca$
+^agents$

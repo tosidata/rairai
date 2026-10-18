@@ -1,0 +1,256 @@
+---
+title: "MCP tool schemas and example outputs"
+vignette: >
+  %\VignetteIndexEntry{MCP tool schemas and example outputs}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+format:
+  html:
+    toc: true
+    toc-depth: 2
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+This vignette shows what an MCP client can expose to an AI agent when the
+`rairai` server is used against this package. It prints all 21 current tool
+schemas and representative inputs. The 19 package-local examples run during
+rendering; the two CRAN examples show schemas and inputs only, without network
+calls or fabricated responses.
+
+Schemas and local responses come from freshly loaded package code, not
+hand-written snapshots. Example arguments are maintained here. Displayed JSON replaces
+the canonical build root with `/path/to/rairai`, including occurrences in nested
+values or keys. This is a publication-only redaction: runtime responses still
+disclose canonical absolute host paths. Source-relative locations are unchanged.
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+
+find_package_root <- function(path = getwd()) {
+  path <- normalizePath(path, winslash = "/", mustWork = TRUE)
+
+  repeat {
+    if (
+      file.exists(file.path(path, "DESCRIPTION")) &&
+        dir.exists(file.path(path, "R"))
+    ) {
+      return(path)
+    }
+
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Could not find package root from ", getwd(), call. = FALSE)
+    }
+    path <- parent
+  }
+}
+
+root <- find_package_root()
+knitr::opts_knit$set(root.dir = root)
+
+pkgload::load_all(root, quiet = TRUE)
+
+format_json <- function(x) {
+  if (is.character(x) && length(x) == 1L && jsonlite::validate(x)) {
+    x <- jsonlite::fromJSON(x, simplifyVector = FALSE)
+  }
+
+  jsonlite::toJSON(
+    x,
+    auto_unbox = TRUE,
+    pretty = TRUE,
+    null = "null",
+    na = "null"
+  ) |>
+    stringr::str_replace_all(stringr::fixed(root), "/path/to/rairai")
+}
+
+as_tool_json <- function(tool) {
+  getFromNamespace("tool_as_mcp_definition", "mcplite")(
+    tool,
+    protocol_version = "2025-11-25"
+  )
+}
+serve_tools <- getFromNamespace("serve_tools", "rairai")
+PackageToolService <- getFromNamespace("PackageToolService", "rairai")
+
+service <- PackageToolService$new(root_path = root)
+tools <- serve_tools(service)
+names(tools) <- vapply(tools, function(tool) as_tool_json(tool)$name, character(1))
+tool_names <- names(tools)
+cran_tools <- c("cran_search", "cran_package")
+
+example_args <- list(
+  package_overview = stats::setNames(list(), character()),
+  package_dependencies = list(depth = 1L),
+  package_files = list(scope = "R", include = c("lines", "size")),
+  package_namespace = stats::setNames(list(), character()),
+  tests_for = list(name = "serve_tools"),
+  package_docs = list(package = "rairai", limit = 10L),
+  help_search = list(query = "serve", package = "rairai", limit = 5L),
+  help_page = list(
+    topic = "serve",
+    package = "rairai",
+    sections = c("Description", "Usage", "Arguments", "Examples"),
+    max_chars = 2000L
+  ),
+  package_vignettes = list(package = "rairai"),
+  package_news = list(package = "rairai"),
+  cran_search = list(query = "static analysis", n_results = 5L),
+  cran_package = list(package_name = "treesitter"),
+  r6_classes = stats::setNames(list(), character()),
+  r6_class = list(name = "PackageToolService"),
+  r6_method = list(class = "PackageToolService", method = "symbols"),
+  r6_method_references = list(
+    class = "PackageToolService",
+    method = "symbols"
+  ),
+  symbols = list(query = "serve", kind = "Function", limit = 20L),
+  definition = list(name = "serve", kind = "Function", exact = TRUE),
+  references = list(
+    name = "serve",
+    kind = "Function",
+    exact = TRUE,
+    limit = 20L
+  ),
+  function_formals = list(name = "serve"),
+  refactor_context = list(
+    name = "serve",
+    kind = "Function",
+    exact = TRUE,
+    limit = 20L
+  )
+)
+
+stopifnot(
+  length(tools) == 21L,
+  setequal(names(example_args), tool_names)
+)
+
+emit_tool_section <- function(name) {
+  tool <- tools[[name]]
+  schema <- as_tool_json(tool)
+  args <- example_args[[name]]
+
+  if (is.null(args)) {
+    stop("No example arguments configured for tool `", name, "`.", call. = FALSE)
+  }
+
+  cat("## `", name, "`\n\n", sep = "")
+  cat(schema$description, "\n\n", sep = "")
+
+  cat("### Schema visible to the MCP client\n\n")
+  cat("```json\n")
+  cat(format_json(schema), "\n", sep = "")
+  cat("```\n\n")
+
+  cat("### Example input\n\n")
+  cat("```json\n")
+  cat(format_json(args), "\n", sep = "")
+  cat("```\n\n")
+
+  if (name %in% cran_tools) {
+    cat("Network example not run during rendering; no response is shown.\n\n")
+  } else {
+    result <- do.call(tool, args)
+    cat("### Example response\n\n")
+    cat("```json\n")
+    cat(format_json(result), "\n", sep = "")
+    cat("```\n\n")
+  }
+}
+
+emit_tool_group <- function(title, names) {
+  cat("# ", title, "\n\n", sep = "")
+  stopifnot(all(names %in% tool_names))
+
+  for (name in names) {
+    emit_tool_section(name)
+  }
+}
+```
+
+## How to read this vignette
+
+Each section below is produced from the live tool definitions in this package:
+
+- The schema comes from the `mcplite::tool()` object after conversion to MCP
+  tool JSON for protocol version `2025-11-25`.
+- The example input is a small argument list chosen to exercise the tool against
+  this repository.
+- Each local response is produced by calling the tool during rendering. A failed
+  call fails the render instead of being presented as a normal response.
+- CRAN inputs are illustrative and are not executed.
+
+Loading `rairai` here runs the documentation generator. The tools inspect package
+files and metadata statically; they do not execute inspected source to obtain
+facts. The 19 local schemas expose optional `package_root`; the CRAN schemas do
+not. See the [toolset overview](tools.html#tool-surface-and-package-roots) for root
+selection and filesystem access.
+
+```{r}
+#| label: static-package-tools
+#| results: asis
+emit_tool_group(
+  "Static package tools",
+  c(
+    "package_overview",
+    "package_dependencies",
+    "package_files",
+    "package_namespace",
+    "tests_for",
+    "package_docs",
+    "help_search",
+    "help_page",
+    "package_vignettes",
+    "package_news"
+  )
+)
+```
+
+```{r}
+#| label: r6-tools
+#| results: asis
+emit_tool_group(
+  "R6 structure tools",
+  c(
+    "r6_classes",
+    "r6_class",
+    "r6_method",
+    "r6_method_references"
+  )
+)
+```
+
+```{r}
+#| label: source-workflow-tools
+#| results: asis
+emit_tool_group(
+  "Source and workflow tools",
+  c(
+    "symbols",
+    "definition",
+    "references",
+    "function_formals",
+    "refactor_context"
+  )
+)
+```
+
+```{r}
+#| label: cran-tools
+#| results: asis
+emit_tool_group("CRAN metadata tools", cran_tools)
+```
+
+## Regenerating the content
+
+Because this vignette evaluates the current package code, refreshing it is just a
+normal vignette render. If a tool schema changes, if a tool response shape
+changes, or if the package gains new tools, the generated sections above should
+reflect those changes after updating the `example_args` list as needed.

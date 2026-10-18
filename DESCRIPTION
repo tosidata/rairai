@@ -1,0 +1,43 @@
+Package: rairai
+Title: 'R' Package Intelligence MCP Server
+Version: 0.2.6
+Authors@R:
+    person("Juha", "Itkonen", , "juha@tosidata.com", role = c("aut", "cre"))
+Description: Helps artificial intelligence (AI) agents develop 'R' packages
+    more efficiently and make better-informed code changes. Provides focused,
+    package-aware context through the Model Context Protocol (MCP) so agents
+    can understand existing behavior and assess changes with less manual
+    exploration. Inspects packages without loading or executing their code.
+License: MIT + file LICENSE
+URL: https://github.com/tosidata/rairai,
+    https://tosidata.github.io/rairai/
+BugReports: https://github.com/tosidata/rairai/issues
+Encoding: UTF-8
+Depends:
+    R (>= 4.3.0)
+Imports:
+    mcplite,
+    cachem,
+    jsonlite,
+    stringr,
+    purrr,
+    glue,
+    rlang,
+    fs,
+    gert,
+    R6,
+    frontmatter,
+    rvest,
+    pkgsearch,
+    treesitter,
+    treesitter.r
+Suggests:
+    knitr,
+    quarto,
+    testthat (>= 3.0.0),
+    withr,
+    pkgload
+Config/testthat/edition: 3
+VignetteBuilder: quarto
+Config/roxygen2/version: 8.1.0
+Config/roxygen2/markdown: TRUE

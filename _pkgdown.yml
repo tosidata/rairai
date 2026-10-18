@@ -1,0 +1,11 @@
+url: https://tosidata.github.io/rairai/
+template:
+  bootstrap: 5
+articles:
+  - title: Articles
+    navbar: ~
+    contents:
+      - tools
+      - design
+      - mcp-tool-schemas
+
