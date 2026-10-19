@@ -1,0 +1,121 @@
+# rairai
+
+`rairai` is a Model Context Protocol (MCP) server for R package
+development.
+
+## Purpose
+
+`rairai` equips AI coding agents with R-specific tools for navigating
+and investigating package code. It complements general-purpose file and
+shell tools with direct access to definitions, references, tests, and R
+documentation, reducing the ad hoc exploration needed for development
+tasks.
+
+The goal is to make agent-assisted maintenance and refactoring more
+efficient and better informed, without requiring the agent to load or
+execute the package under inspection.
+
+## Design principles
+
+- **No target-package execution**: inspect files, symbols, references,
+  namespace, and docs without loading, installing, or running the target
+  package.
+- **In-process source intelligence**: served tools do not start a
+  background analysis process.
+- **AI-friendly outputs**: compact and structured responses with stable
+  fields.
+
+## Installation
+
+``` r
+
+# pak::pak("tosidata/rairai") # development version
+install.packages("rairai") # After CRAN release
+```
+
+## Quick start
+
+From the package directory you want to inspect, start the server:
+
+``` sh
+Rscript -e "rairai::serve()"
+```
+
+Or configure your MCP client to start it for a specific package, for
+example:
+
+``` json
+{
+  "mcpServers": {
+    "rairai": {
+      "command": "Rscript",
+      "args": ["-e", "rairai::serve(path = '/path/to/target-package')"]
+    }
+  }
+}
+```
+
+The client starts the process and communicates over standard input and
+output; configuration schemas vary by client. Ask the client to call the
+MCP tool `package_overview` for a first look at the package (not an R
+function call).
+
+## Security
+
+At the client’s request, `rairai` can read any directory readable by its
+process; the startup path is not a sandbox. File names, file contents,
+and canonical absolute host paths can be disclosed to the MCP client;
+inspected package code is not executed. Restrict filesystem access with
+process permissions or a container.
+
+## Tool reference
+
+[`serve()`](https://tosidata.github.io/rairai/reference/serve.md) is the
+only R namespace export. It exposes 21 public MCP tools; MCP tool names
+below are client calls, not exported R functions.
+
+| Tool | Description |
+|----|----|
+| `package_overview` | Return a compact first-look package orientation map with section-local follow-up tools. |
+| `package_dependencies` | Read package dependencies from `DESCRIPTION`. |
+| `package_files` | List package files for development (default scope `R`). |
+| `package_namespace` | Read exports, imported objects by package, S3 methods, and native-code declarations from `NAMESPACE`. |
+| `tests_for` | Find compact test locations that reference a symbol. |
+| `package_docs` | Return a compact documentation map for a package, including help topics, vignettes, NEWS, and next-tool hints. |
+| `help_search` | Search R help topics by name, alias, title, or concept and return compact ranked matches. |
+| `help_page` | Retrieve one R help page as plain text, optionally limited to selected sections. |
+| `package_vignettes` | List available vignettes or read a specific vignette as text. |
+| `package_news` | Read `NEWS.md`/`NEWS` for a package or the local package. |
+| `cran_search` | Search CRAN package metadata with pkgsearch ranking and return compact candidates. |
+| `cran_package` | Look up DESCRIPTION-like CRAN metadata for one exact package name. |
+| `r6_classes` | List R6 classes defined in flat `R/*.[Rr]` package source. |
+| `r6_class` | Return the full structure of a named R6 class. |
+| `r6_method` | Return exact source text and location for a specific R6 class method. |
+| `r6_method_references` | Find syntactic call sites of a named R6 method (`obj$method()`) and report requested target status. |
+| `symbols` | Find or list source symbols by query, file path, kind, and exactness. |
+| `definition` | Resolve a symbol name to one canonical definition; ambiguous matches return candidates. |
+| `references` | Resolve a symbol name and return reference locations. |
+| `function_formals` | Return package-local function signatures from source; external/package-qualified signatures return a clear limitation with help-tool next steps. |
+| `refactor_context` | Return a resolved declaration, references, export status, related tests, and next-tool hints in one call. |
+
+## Architecture
+
+- `R/serve.R` resolves effective roots before tool work and registers
+  the MCP tools.
+- `PackageToolService` shapes source and refactor responses for its
+  bound root; non-default calls use separate root-bound services without
+  changing cwd.
+- `SourceIndex` owns Tree-sitter-backed package-local symbols,
+  definitions, references, and local function formals.
+- `R/tool-definitions.R` and the domain-specific tool modules contain
+  LLM-facing
+  [`mcplite::tool()`](https://tosidata.github.io/mcplite/reference/tool.html)
+  constructors.
+
+## More help
+
+Use
+[`help("serve", package = "rairai")`](https://tosidata.github.io/rairai/reference/serve.md)
+for root selection and security details, and
+[`vignette("tools", package = "rairai")`](https://tosidata.github.io/rairai/articles/tools.md)
+for the tool guide.

@@ -1,0 +1,265 @@
+# Toolset overview
+
+This vignette explains why each `rairai` tool exists and which AI-agent
+workflows it supports. Use it together with the numbered design
+principles in `vignettes/design.qmd` when deciding whether a tool is
+useful, redundant, or better expressed as part of a higher-level
+workflow.
+
+## Target workflows
+
+The toolset should be judged against common workflows where an AI agent
+benefits from R-specific structure and evidence.
+
+### W1 — Understand a symbol
+
+Answer: what is this object, where is it defined, and where is it used?
+Useful tools should resolve a name to candidates, return a definition
+location, list references, and make ambiguity explicit.
+
+### W2 — Prepare a safe code change
+
+Before editing, an agent should find the relevant object, inspect the
+source range with its normal file-reading tools, understand affected
+call sites, and find related tests and exported API status.
+
+### W3 — Refactor without guessing
+
+For renaming, moving, or restructuring code, an agent needs a map of
+definitions, references, exported names, namespace declarations, and
+tests. `rairai` should prefer previewable evidence over tools that
+silently mutate code.
+
+### W4 — Diagnose a failure or warning
+
+When tests or checks fail, an agent needs to connect messages to source
+locations and package context. Tools should help inspect the relevant
+object, references, dependencies, documentation, and namespace state.
+
+### W5 — Explore an unfamiliar package
+
+An agent joining a codebase needs quick orientation: package files,
+dependencies, namespace exports/imports, file-scoped symbols, and
+important symbols. This should not require reading every source file in
+full.
+
+### W6 — Add or update tests
+
+When changing behavior, an agent needs to find the implementation,
+related tests, and call sites. Tools should identify objects and
+affected files, while ordinary file and shell tools handle reading,
+editing, and running tests.
+
+## Tool surface and package roots
+
+[`serve()`](https://tosidata.github.io/rairai/reference/serve.md) is the
+only exported R function. It exposes 21 public MCP tools that accept
+names, paths, scopes, and package concepts. Calls in this guide use MCP
+argument notation, not exported R functions.
+
+The 19 package-local tools use the immutable canonical default selected
+by `serve(path = ...)`. To inspect another directory, repeat its native
+absolute `package_root` on every applicable call. Omitted, `NULL`, or
+empty selectors use the default; relative paths, tilde paths, and file
+URIs are not root selectors. The directory must exist and is
+canonicalized, including symlink resolution. Resolved responses report
+the effective root in `package_root`. The CRAN tools `cran_search` and
+`cran_package` have no root selector.
+
+`path` and `context_path` filter within the effective root; they do not
+select a package. `package` retains each tool’s installed-documentation,
+external-function, or imported-package meaning. In particular,
+`package_docs()` defaults to local documentation, while `help_search()`
+without `package` searches local and installed help. External function
+signatures remain unsupported by `function_formals()`; use the help
+tools instead.
+
+Roots are unrestricted process-readable directories. File listings and
+package-role readers can disclose more than conventional package
+metadata, and responses disclose canonical absolute host paths.
+Within-package containment is not a race-free sandbox; process or
+container permissions provide strong filesystem confinement.
+
+## Usability goals
+
+Design tool names, descriptions, and outputs so that an agent is nudged
+toward a small number of obvious first moves:
+
+- use `package_overview()` when entering an unfamiliar package;
+- use [`symbols()`](https://rdrr.io/r/graphics/symbols.html) when
+  looking for code entities by name, kind, or file scope;
+- use `definition()` and `references()` when preparing a targeted edit;
+- use `refactor_context()` when the requested change may affect many
+  call sites or exported names;
+- use `tests_for()` when changing behavior;
+- use `package_docs()`, `help_search()`, and `help_page()` for
+  documentation and external/package-qualified function questions.
+
+Avoid exposing multiple tools that appear to answer the same question
+unless the difference changes the agent’s next action. If a distinction
+mainly reflects an implementation backend, keep it private.
+
+Where useful, responses should include compact routing hints such as
+counts, ambiguity status, returned path/range fields, and suggested
+lower-level tools to call next. These hints should be structured fields
+rather than prose summaries so agents can act on them reliably.
+
+## Tool purposes
+
+This section describes the toolset from the perspective of an AI coding
+agent. Tools are grouped by the task they help an agent perform, not by
+the underlying data source used to implement them.
+
+### Package orientation tools
+
+Use these tools when the agent needs to understand the package shape
+before choosing files or symbols to inspect. They provide R-package
+context that ordinary file readers and text search do not reconstruct
+reliably.
+
+- `package_overview`: default first look at `DESCRIPTION`, `NAMESPACE`,
+  package file layout, tests, vignettes, source symbols, and R6 classes.
+- `package_dependencies`: read dependency declarations from
+  `DESCRIPTION`, including direct and optionally indirect dependencies.
+- `package_files`: list package files by package-oriented scope, with
+  optional metadata such as line counts, size, or modification time.
+- `package_namespace`: read exports, imported objects by package, S3
+  method registrations, and dynamic library declarations from
+  `NAMESPACE`.
+- `package_docs`: browse local or installed package documentation,
+  including help topics, vignette and NEWS summaries, and next-tool
+  hints.
+- `package_news`: read `NEWS.md` or `NEWS` content for the local package
+  or an installed package.
+- `package_vignettes`: list available vignettes or retrieve a specific
+  vignette as plain text.
+- `cran_search`: search ranked CRAN package metadata for candidate
+  packages.
+- `cran_package`: look up DESCRIPTION-like CRAN metadata for one exact
+  package name.
+
+### Preferred workflow routes
+
+- Unfamiliar package: call `package_overview()`, then
+  [`symbols()`](https://rdrr.io/r/graphics/symbols.html),
+  `package_files()`, or `package_docs()` for the relevant area.
+- Documentation map: call `package_docs()` to browse help topics,
+  vignette availability, and NEWS availability without a search query.
+- Specific function or object: call `symbols(query = ..., exact = TRUE)`
+  or `definition(name = ...)`, then read the returned source range with
+  the agent’s normal file-reading tool.
+- Behavior change: call `definition()`, `references()`, and
+  `tests_for()` before editing.
+- Rename or structural refactor: call `refactor_context()` first, then
+  inspect the resolved declaration, references, namespace/export
+  information, and tests.
+- Test failure: use the file/range from the failure when available, then
+  call `symbols(path = ...)`, `definition()`, `references()`, or
+  `package_namespace()` depending on whether the problem is local code,
+  call-site impact, or package API state.
+- Documentation lookup: call `help_search(query = ..., package = ...)`
+  when the topic is unknown, then
+  `help_page(topic = ..., sections = ...)` for selected sections.
+- R6 code: call `r6_classes()` or `r6_class()` before falling back to
+  generic symbol search, because R6 member structure is easier to
+  inspect with R6-aware tools.
+
+### Symbol and source navigation tools
+
+Use [`symbols()`](https://rdrr.io/r/graphics/symbols.html) to find code
+entities or decide what source range to read next. Package source
+indexing covers flat `R/*.[Rr]` files.
+
+- `symbols`
+  - Purpose: find or list Tree-sitter-indexed package-local source
+    symbols using optional query, file path, kind, and exact-match
+    filters. With `path` supplied, it lists or searches symbols in that
+    file. Without `path`, it searches package source symbols. Ambiguous
+    matches are returned as structured candidates rather than silently
+    resolved.
+  - Example uses:
+    - `symbols(path = "R/foo.R")` lists symbols in one file.
+    - `symbols(query = "parse", exact = FALSE)` searches matching names
+      across the package.
+    - `symbols(query = "parse", path = "R/foo.R", exact = FALSE)`
+      searches matching names within one file.
+  - Workflows: W1, W2, W5, W6.
+
+### Definition, reference, and impact tools
+
+- `definition`
+  - Purpose: resolve a symbol name to one canonical definition. If the
+    name is ambiguous, return candidates with enough information for the
+    agent to narrow the request instead of choosing one silently.
+  - Workflows: W1, W2, W6.
+- `references`
+  - Purpose: resolve a symbol name and return role-classified syntactic
+    impact reference locations. The resolved declaration is reported
+    separately from usage references; `path` filters candidate
+    resolution, while the reference search scope is package-wide and
+    includes tests by default.
+  - Workflows: W1, W2, W3, W6.
+- `refactor_context`
+  - Purpose: return a complete refactor-readiness context for a symbol
+    by name: resolved declaration, references, namespace/export status,
+    and related tests when available. Return candidates when the symbol
+    is ambiguous.
+  - Workflows: W3.
+
+### Function inspection tools
+
+Use this tool when the agent needs to call or modify a function without
+loading the target package.
+
+- `function_formals`
+  - Purpose: return a local package function’s call signature,
+    parameters, and defaults from the Tree-sitter source index. External
+    or package-qualified requests return an explicit unsupported result
+    with `help_page()` and `help_search()` next-tool hints. The tool
+    does not load or execute the target package to recover signatures.
+  - Workflows: W1, W2, W6.
+
+### Test and documentation discovery tools
+
+- `tests_for`: search test files for mentions of a symbol name and
+  return compact 1-based location strings. Works entirely from source
+  with no package loading required.
+- `package_docs`: browse the documentation map for the local source
+  package or an installed package without requiring a query.
+- `help_search`: search help topics by function name, alias, title, or
+  concept.
+- `help_page`: retrieve one R help page as plain text, with optional
+  section filtering and character limits.
+- `package_vignettes`: list available package vignettes or retrieve one
+  vignette.
+- `package_news`: inspect recent or version-specific behavior changes
+  when diagnosing failures or preparing user-visible changes.
+
+### R6 structure tools
+
+- `r6_classes`: list all R6 classes defined in the package’s flat
+  `R/*.[Rr]` source files with exact source locations and inheritance
+  relationships.
+- `r6_class`: return the full structure of a named R6 class, including
+  public, private, and active members.
+- `r6_method`: return the compact source location and exact source text
+  for a specific R6 class method.
+- `r6_method_references`: find call sites that use `$method()` syntax
+  for a named R6 method, with target-resolution metadata for the
+  requested class and method.
+
+## Questions for tool review
+
+When reviewing the toolset, ask:
+
+1.  Which workflows does this tool support?
+2.  Which design principles justify its shape?
+3.  Is it a preferred LLM-facing tool, a lower-level primitive, or
+    redundant?
+4.  Would a combined workflow tool reduce repeated calls without hiding
+    ambiguity?
+5.  Does the tool provide R-package or R-language intelligence that
+    ordinary file/search/shell tools do not already provide?
+6.  Are optional arguments robust if an MCP client fills in `NULL`, an
+    empty string, a schema default, or the first enum value instead of
+    omitting them?

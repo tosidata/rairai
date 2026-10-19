@@ -1,0 +1,217 @@
+# Design Principles
+
+`rairai` provides MCP tools that help AI agents understand and develop R
+packages. It does not try to replace an editor, shell, test runner, or
+file reader. Instead, it exposes compact R-package intelligence that is
+hard for a general agent to reconstruct reliably from raw files alone.
+
+The package is designed for agents that need to make code changes
+without guessing. Tools should help an agent discover package structure,
+navigate code, inspect definitions and references, and check feedback
+from R-specific systems before acting.
+
+## Assumed agent environment
+
+`rairai` assumes the caller is an AI coding agent working in an IDE,
+terminal, cloud workspace, or similar development environment. Such
+agents usually already have tools to:
+
+- read files and selected line ranges;
+- search file contents;
+- edit files;
+- run shell commands;
+- run R package checks and tests;
+- inspect editor diagnostics when available.
+
+`rairai` tools should complement these capabilities rather than
+duplicate them. For example, a tool may return compact 1-based location
+strings and rely on the agent’s normal file-reading tool to fetch the
+source text.
+
+## Implementation boundaries
+
+`R/serve.R` selects the effective canonical root before package-local
+tool work. The default root is immutable; a non-default `package_root`
+applies only to its call. `PackageToolService` shapes source and
+refactor responses for its bound root, and `SourceIndex` owns
+package-local syntax facts. Internal constructors consume canonical
+roots rather than selecting roots or changing cwd.
+
+MCP tools are public ingress even though
+[`serve()`](https://tosidata.github.io/rairai/reference/serve.md) is the
+only R namespace export. Client-facing schemas describe inputs; they do
+not establish complete runtime rejection of malformed calls. Invocation
+boundaries own domain checks, while internal consumers rely on their
+established preconditions.
+
+The [toolset
+overview](https://tosidata.github.io/rairai/articles/tools.html#tool-surface-and-package-roots)
+describes selectors, provenance, the CRAN exclusion, and filesystem-read
+limitations. Source indexing is static and covers flat `R/*.[Rr]` files;
+test-search scope is tool-specific. Installed-documentation lookup does
+not authorize executing inspected source or recovering external function
+signatures through runtime introspection.
+
+## Source location policy
+
+Many tools return a `location` field. A location is a compact 1-based
+source string such as `R/foo.R:12`, `R/foo.R:12-30`, or
+`R/foo.R:12:3-30:8`. Locations are optimized for AI-agent source reading
+and rewrite workflows, not only for editor cursor precision.
+
+For source objects such as functions, classes, and R6 members,
+`location` should represent the exact object range. Prefer a full line
+range over a start line whenever the tool can determine the range. When
+an object has immediately preceding ordinary or roxygen comments, tools
+that expose source-object records should report those comments in a
+sibling `leading_comment_lines` field such as `"4"` or `"1-4"`. That
+field is pathless because the file is already identified by `location`.
+
+Leading-comment detection scans upward from the exact start line and
+includes only the contiguous comment block immediately above the object.
+It stops at a blank line, real code, or the start of the file. Tools
+omit `leading_comment_lines` when no such block exists.
+
+Concrete references, text hits, call-site matches, and NEWS sections
+describe occurrences or document sections rather than source-object
+definitions. Their locations point to the matched range or requested
+context, without leading-comment context.
+
+## Design principles
+
+Use these principles as stable references when evaluating tool additions
+or changes. The toolset overview maps current tools to target workflows
+and these principles.
+
+### P1 — Design for LLM workflows, not IDE cursors
+
+IDE-oriented tools often start from a cursor position. AI agents more
+often reason in terms of names, files, tasks, and intent. Prefer
+interfaces that accept package concepts such as symbol names, file
+paths, scopes, and options over interfaces that require a line and
+column.
+
+Position-based operations are still useful as precise implementation
+primitives, especially when a previous tool has already returned a
+location. They should not be the only way to perform common tasks, and
+they should remain internal unless a concrete agent workflow requires
+exposing them publicly.
+
+### P2 — Reduce guessing
+
+Tools should make uncertainty explicit. If a symbol name is ambiguous,
+return a structured list of candidates instead of choosing one silently.
+If nothing is found, return a stable empty result. If source analysis or
+package metadata cannot answer, return a structured error or explicit
+limitation.
+
+The goal is not to make the agent feel confident. The goal is to give it
+enough specific evidence to proceed without inventing facts.
+
+### P3 — Prefer compact, structured outputs
+
+Tool responses should be concise and machine-readable. Prefer stable
+keys, root-relative source locations, counts, status fields, and 1-based
+line/column positions. The top-level `package_root` is canonical
+absolute provenance. Avoid long prose in tool outputs unless the
+underlying R system is itself returning documentation or messages.
+
+### P4 — Build composable primitives and useful workflows
+
+Some tools should expose precise primitives, such as file outlines,
+definitions, and references. Other tools may combine common multi-step
+workflows when that saves the agent from repeatedly performing the same
+sequence.
+
+A combined tool should be added when it reflects a common agent task and
+can reduce tool calls without hiding important ambiguity. It should not
+merely wrap a single primitive with a different name.
+
+### P5 — Avoid overlap with general coding tools
+
+Do not add tools whose main purpose is to read arbitrary files, search
+plain text, edit files, run commands, or summarize source code
+generically. Agents usually already have those capabilities. `rairai`
+should focus on R-package and R-language intelligence.
+
+This includes package validation commands such as `devtools::test()` and
+`devtools::check()`. These commands are important parts of an agent’s
+workflow, but they should normally be run through the agent’s shell or
+test-runner tools, not through `rairai`. They execute package code, can
+be long-running, and require process-management behavior that is outside
+the static package-intelligence boundary. `rairai` may help an agent
+decide what to test, find relevant tests, connect failures back to
+package context, but it should not duplicate the command runner itself.
+
+### P6 — Keep R package semantics central
+
+Tools should understand R package structure and conventions where
+possible: `DESCRIPTION`, `NAMESPACE`, `R/`, tests, documentation,
+exported objects, S3 methods, R6 classes, and Tree-sitter-indexed source
+symbols. Prefer package-aware answers over raw filesystem or
+text-processing answers.
+
+Prefer static source-index and package metadata over approaches that
+require loading, installing, or evaluating the target package. Agents
+often work against a live, partially edited codebase where package code
+may not parse, load, install, or safely execute. Tools that inspect
+signatures, documentation, symbols, or package metadata should work from
+source and Rd/help metadata rather than depending on `load_all()`,
+namespace loading, or runtime introspection such as
+[`formals()`](https://rdrr.io/r/base/formals.html) on evaluated
+functions.
+
+### P7 — Make safe change workflows easier
+
+The most valuable tools are those that help an agent prepare for and
+verify a change: find the relevant code, understand definitions and
+references, inspect package metadata, and find related tests. Mutating
+or refactoring tools should be introduced cautiously and should prefer
+previewable, explicit behavior.
+
+### P8 — Keep the MCP surface reviewable
+
+Tool names, descriptions, and argument schemas are part of the user
+interface for LLMs. They should be easy to review together and should
+guide the agent toward the preferred tool for a task. The public MCP
+surface should be a single concise LLM-facing toolset rather than a
+collection of profiles split by backend detail. When several tools
+overlap, descriptions should explain when to use the high-level workflow
+tool and when to use the lower-level primitive.
+
+### P9 — Make optional arguments safe against client defaulting
+
+MCP clients may not preserve the distinction between an omitted optional
+argument, `null`, an empty string, and a concrete value. Some clients
+may also pre-fill optional arguments with schema defaults or choose the
+first enum value even when the intended behavior is to leave the
+parameter unspecified.
+
+Design tool arguments so accidental defaulting is safe. Optional filters
+should have an explicit no-filter sentinel such as `NULL`, `""`, or
+`"all"` that cannot be confused with a real filter value. Avoid schemas
+where the first enum value is a meaningful restrictive filter, such as
+`0` when `0` means “filter to zero”. When possible, normalize omitted,
+`NULL`, empty string, and documented no-filter values to the same
+behavior. Tool descriptions should state how to request no filter, and
+tests should cover client-like calls that pass optional arguments as
+`NULL`, empty strings, or default-looking values.
+
+## Questions for new tools
+
+Before adding a tool, ask:
+
+1.  What common agent task does this support?
+2.  Does it provide R-package or R-language intelligence the agent
+    cannot easily get from ordinary file/search/shell tools?
+3.  Can it work from source and package metadata without requiring the
+    target package to load, install, or execute?
+4.  Can the interface use names, paths, scopes, or package concepts
+    instead of requiring cursor positions?
+5.  Are optional arguments safe if an MCP client sends `NULL`, an empty
+    string, a schema default, or the first enum value instead of
+    omitting the argument?
+6.  How does it report ambiguity, empty results, and errors?
+7.  Is it a primitive, a workflow tool, or unnecessary overlap?
+8.  What evidence would an agent use from this response before editing
+    code?
