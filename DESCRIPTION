@@ -1,5 +1,5 @@
 Package: rairai
-Title: 'R' Package Intelligence MCP Server
+Title: Model Context Protocol Server for Package Intelligence
 Version: 0.2.6
 Authors@R:
     person("Juha", "Itkonen", , "juha@tosidata.com", role = c("aut", "cre"))

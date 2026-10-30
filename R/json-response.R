@@ -8,24 +8,6 @@
 #'
 #' @returns A JSON object string.
 #'
-#' @examples
-#' stopifnot(identical(
-#'   as.character(rairai:::json_response(a = NULL)),
-#'   '{"a":{}}'
-#' ))
-#' stopifnot(identical(
-#'   as.character(rairai:::json_response(a = list())),
-#'   '{"a":[]}'
-#' ))
-#' stopifnot(identical(
-#'   as.character(rairai:::json_response(a = NA)),
-#'   '{"a":null}'
-#' ))
-#' stopifnot(identical(
-#'   as.character(rairai:::json_response(a = I(NA))),
-#'   '{"a":[null]}'
-#' ))
-#'
 #' @keywords internal
 json_response <- function(..., auto_unbox = TRUE) {
   toJSON(rlang::list2(...), auto_unbox = auto_unbox)

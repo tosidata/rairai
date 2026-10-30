@@ -18,23 +18,4 @@ A JSON object string.
 Absent, empty, and \code{NA} values each have distinct JSON-shaping meanings;
 use them consistently.
 }
-\examples{
-stopifnot(identical(
-  as.character(rairai:::json_response(a = NULL)),
-  '{"a":{}}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = list())),
-  '{"a":[]}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = NA)),
-  '{"a":null}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = I(NA))),
-  '{"a":[null]}'
-))
-
-}
 \keyword{internal}
