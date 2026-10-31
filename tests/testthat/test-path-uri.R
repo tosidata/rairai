@@ -102,10 +102,7 @@ test_that("root-relative paths retain authority when a root ancestor changes", {
   }
 
   fs::dir_delete(dirname(root_path))
-  skip_if_not(
-    file.symlink(outside, dirname(root_path)),
-    "Cannot create a symlink"
-  )
+  create_test_symlink(outside, dirname(root_path))
   for (path in filters) {
     result <- normalize_root_relative_path(path, root_path)
     expect_equal(result$error$code, "path_outside_root")
@@ -126,9 +123,7 @@ test_that("root-relative paths reject symlink escapes", {
   root_path <- normalizePath(root_path, winslash = "/", mustWork = TRUE)
   dir.create(outside_path)
   file.create(file.path(outside_path, "secret.R"))
-  if (!isTRUE(suppressWarnings(file.symlink(outside_path, link_path)))) {
-    skip("Host does not support symlinks.")
-  }
+  create_test_symlink(outside_path, link_path)
   input_path <- file.path(link_path, "secret.R")
 
   result <- normalize_root_relative_path(input_path, root_path = root_path)

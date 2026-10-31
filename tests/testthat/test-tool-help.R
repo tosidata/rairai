@@ -199,12 +199,11 @@ test_that("help_page returns error for unknown requested package", {
 })
 
 test_that("help_page reports ambiguous unscoped installed topics", {
-  skip_if_not_installed("dplyr")
-  result <- read_help_page("filter")
+  result <- read_help_page("set_names")
 
   expect_equal(as.character(result$error$code), "ambiguous_topic")
   candidate_packages <- map_chr(result$error$candidates, "package")
-  expect_true(all(c("stats", "dplyr") %in% candidate_packages))
+  expect_true(all(c("purrr", "rlang") %in% candidate_packages))
 
   for (candidate in result$error$candidates) {
     expect_true(all(

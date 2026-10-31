@@ -216,31 +216,35 @@ cran_package_error_code <- function(cnd) {
   "cran_package_failed"
 }
 
-tool_cran_search <- mcplite::tool(
-  cran_search,
-  name = "cran_search",
-  description = paste(
-    "Search CRAN packages by name, title, description, author, and",
-    "maintainer. Use cran_package for exact package metadata."
-  ),
-  arguments = list(
-    query = mcplite::type_string(
-      "Search query."
+tool_cran_search <- function() {
+  mcplite::tool(
+    cran_search,
+    name = "cran_search",
+    description = paste(
+      "Search CRAN packages by name, title, description, author, and",
+      "maintainer. Use cran_package for exact package metadata."
     ),
-    n_results = mcplite::type_integer(
-      "Maximum number of packages. Default: 20; maximum: 50.",
-      required = FALSE
+    arguments = list(
+      query = mcplite::type_string(
+        "Search query."
+      ),
+      n_results = mcplite::type_integer(
+        "Maximum number of packages. Default: 20; maximum: 50.",
+        required = FALSE
+      )
     )
   )
-)
+}
 
-tool_cran_package <- mcplite::tool(
-  cran_package,
-  name = "cran_package",
-  description = "Look up CRAN metadata for one exact package name.",
-  arguments = list(
-    package_name = mcplite::type_string(
-      "Exact package name."
+tool_cran_package <- function() {
+  mcplite::tool(
+    cran_package,
+    name = "cran_package",
+    description = "Look up CRAN metadata for one exact package name.",
+    arguments = list(
+      package_name = mcplite::type_string(
+        "Exact package name."
+      )
     )
   )
-)
+}

@@ -70,19 +70,41 @@ format_json <- function(x) {
     stringr::str_replace_all(stringr::fixed(root), "/path/to/rairai")
 }
 
-as_tool_json <- function(tool) {
-  getFromNamespace("tool_as_mcp_definition", "mcplite")(
-    tool,
-    protocol_version = "2025-11-25"
-  )
-}
 serve_tools <- getFromNamespace("serve_tools", "rairai")
 PackageToolService <- getFromNamespace("PackageToolService", "rairai")
 
 service <- PackageToolService$new(root_path = root)
 tools <- serve_tools(service)
-names(tools) <- vapply(tools, function(tool) as_tool_json(tool)$name, character(1))
-tool_names <- names(tools)
+dispatch <- getFromNamespace("dispatch_message", "mcplite")
+initialization <- dispatch(
+  list(
+    jsonrpc = "2.0",
+    id = 1,
+    method = "initialize",
+    params = list(
+      protocolVersion = "2025-11-25",
+      capabilities = structure(list(), names = character()),
+      clientInfo = list(name = "rairai-vignette", version = "0.0.0")
+    )
+  ),
+  getFromNamespace("new_server_state", "mcplite")(tools)
+)
+stopifnot(identical(
+  initialization$response$result$protocolVersion,
+  "2025-11-25"
+))
+state <- dispatch(
+  list(jsonrpc = "2.0", method = "notifications/initialized"),
+  initialization$state
+)$state
+response <- dispatch(
+  list(jsonrpc = "2.0", id = 2, method = "tools/list"),
+  state
+)
+tool_definitions <- response$response$result$tools
+tool_names <- vapply(tool_definitions, function(tool) tool$name, character(1))
+names(tools) <- tool_names
+names(tool_definitions) <- tool_names
 cran_tools <- c("cran_search", "cran_package")
 
 example_args <- list(
@@ -134,7 +156,7 @@ stopifnot(
 
 emit_tool_section <- function(name) {
   tool <- tools[[name]]
-  schema <- as_tool_json(tool)
+  schema <- tool_definitions[[name]]
   args <- example_args[[name]]
 
   if (is.null(args)) {
@@ -179,8 +201,8 @@ emit_tool_group <- function(title, names) {
 
 Each section below is produced from the live tool definitions in this package:
 
-- The schema comes from the `mcplite::tool()` object after conversion to MCP
-  tool JSON for protocol version `2025-11-25`.
+- The schema comes from a `tools/list` response after negotiating MCP protocol
+  version `2025-11-25` with `mcplite`.
 - The example input is a small argument list chosen to exercise the tool against
   this repository.
 - Each local response is produced by calling the tool during rendering. A failed

@@ -1,8 +1,31 @@
 mcp_tool_definition <- function(tool, protocol_version = "2025-11-25") {
-  getFromNamespace("tool_as_mcp_definition", "mcplite")(
-    tool,
-    protocol_version = protocol_version
+  dispatch <- getFromNamespace("dispatch_message", "mcplite")
+  initialization <- dispatch(
+    list(
+      jsonrpc = "2.0",
+      id = 1,
+      method = "initialize",
+      params = list(
+        protocolVersion = protocol_version,
+        capabilities = structure(list(), names = character()),
+        clientInfo = list(name = "rairai-tests", version = "0.0.0")
+      )
+    ),
+    getFromNamespace("new_server_state", "mcplite")(list(tool))
   )
+  stopifnot(identical(
+    initialization$response$result$protocolVersion,
+    protocol_version
+  ))
+  state <- dispatch(
+    list(jsonrpc = "2.0", method = "notifications/initialized"),
+    initialization$state
+  )$state
+  response <- dispatch(
+    list(jsonrpc = "2.0", id = 2, method = "tools/list"),
+    state
+  )
+  response$response$result$tools[[1L]]
 }
 
 mcp_tool_names <- function(tools) {

@@ -61,10 +61,7 @@ local_containment_fixture <- function(.env = parent.frame()) {
 }
 
 containment_link <- function(target, path) {
-  testthat::skip_if_not(
-    suppressWarnings(file.symlink(target, path)),
-    "Cannot create a symlink"
-  )
+  create_test_symlink(target, path)
 }
 
 containment_call <- function(service, call, package_root = NULL) {

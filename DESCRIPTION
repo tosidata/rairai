@@ -1,6 +1,6 @@
 Package: rairai
 Title: Model Context Protocol Server for Package Intelligence
-Version: 0.2.6
+Version: 0.2.7
 Authors@R:
     person("Juha", "Itkonen", , "juha@tosidata.com", role = c("aut", "cre"))
 Description: Helps artificial intelligence (AI) agents develop 'R' packages

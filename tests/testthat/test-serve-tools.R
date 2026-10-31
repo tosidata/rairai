@@ -65,6 +65,28 @@ test_that("serve_tools exposes the single target public toolset", {
   expect_false(any(removed_public_tools %in% tool_names))
 })
 
+test_that("serve_tools constructs CRAN tools afresh on each call", {
+  constructed <- character()
+  cran_names <- c("cran_search", "cran_package")
+  tool_constructor <- mcplite::tool
+  local_mocked_bindings(
+    tool = function(..., name = NULL) {
+      if (name %in% cran_names) {
+        constructed <<- c(constructed, name)
+      }
+      tool_constructor(..., name = name)
+    },
+    .package = "mcplite"
+  )
+  service <- mock_package_service()
+
+  rairai:::serve_tools(service)
+  expect_identical(constructed, cran_names)
+
+  rairai:::serve_tools(service)
+  expect_identical(constructed, rep(cran_names, 2L))
+})
+
 test_that("served tool schemas mark only required public arguments", {
   tools <- rairai:::serve_tools(mock_package_service())
   definitions <- setNames(

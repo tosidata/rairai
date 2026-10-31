@@ -384,7 +384,7 @@ test_that("bound source filters cannot adopt a replaced default root", {
   expect_false(absent$is_error)
   expect_equal(absent$payload$package_root, root)
   expect_equal(absent$payload$count, 0L)
-  skip_if_not(file.symlink(outside, root), "Cannot create a symlink")
+  create_test_symlink(outside, root)
 
   filters <- c(
     "R/core.R",
@@ -433,7 +433,7 @@ test_that("symlink package root selectors report the canonical target", {
   selected_root <- local_root_isolation_package(parent, "betaPkg", "beta")
   selected_root <- normalizePath(selected_root, winslash = "/", mustWork = TRUE)
   alias <- file.path(parent, "beta-alias")
-  skip_if_not(file.symlink(selected_root, alias), "Cannot create a symlink")
+  create_test_symlink(selected_root, alias)
   state <- root_isolation_server_state(default_root)
 
   result <- root_isolation_tool_call(

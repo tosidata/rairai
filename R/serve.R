@@ -232,8 +232,8 @@ serve_tools <- function(service) {
   c(
     root_bound_tools,
     list(
-      tool_cran_search,
-      tool_cran_package
+      tool_cran_search(),
+      tool_cran_package()
     )
   )
 }
