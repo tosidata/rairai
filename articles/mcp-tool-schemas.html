@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rairai</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,7 @@
 </h3>
 <p>Each section below is produced from the live tool definitions in this package:</p>
 <ul>
-<li>The schema comes from the <code><a href="https://tosidata.github.io/mcplite/reference/tool.html" class="external-link">mcplite::tool()</a></code> object after conversion to MCP tool JSON for protocol version <code>2025-11-25</code>.</li>
+<li>The schema comes from a <code>tools/list</code> response after negotiating MCP protocol version <code>2025-11-25</code> with <code>mcplite</code>.</li>
 <li>The example input is a small argument list chosen to exercise the tool against this repository.</li>
 <li>Each local response is produced by calling the tool during rendering. A failed call fails the render instead of being presented as a normal response.</li>
 <li>CRAN inputs are illustrative and are not executed.</li>
@@ -130,8 +130,8 @@
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"description"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"fields"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Package"</span><span class="fu">:</span> <span class="st">"rairai"</span><span class="fu">,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Title"</span><span class="fu">:</span> <span class="st">"'R' Package Intelligence MCP Server"</span><span class="fu">,</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.2.6"</span><span class="fu">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Title"</span><span class="fu">:</span> <span class="st">"Model Context Protocol Server for Package Intelligence"</span><span class="fu">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Version"</span><span class="fu">:</span> <span class="st">"0.2.7"</span><span class="fu">,</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Authors@R"</span><span class="fu">:</span> <span class="st">"person(</span><span class="ch">\"</span><span class="st">Juha</span><span class="ch">\"</span><span class="st">, </span><span class="ch">\"</span><span class="st">Itkonen</span><span class="ch">\"</span><span class="st">, , </span><span class="ch">\"</span><span class="st">juha@tosidata.com</span><span class="ch">\"</span><span class="st">, role = c(</span><span class="ch">\"</span><span class="st">aut</span><span class="ch">\"</span><span class="st">, </span><span class="ch">\"</span><span class="st">cre</span><span class="ch">\"</span><span class="st">))"</span><span class="fu">,</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Description"</span><span class="fu">:</span> <span class="st">"Helps artificial intelligence (AI) agents develop 'R' packages</span><span class="ch">\n</span><span class="st">more efficiently and make better-informed code changes. Provides focused,</span><span class="ch">\n</span><span class="st">package-aware context through the Model Context Protocol (MCP) so agents</span><span class="ch">\n</span><span class="st">can understand existing behavior and assess changes with less manual</span><span class="ch">\n</span><span class="st">exploration. Inspects packages without loading or executing their code."</span><span class="fu">,</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"License"</span><span class="fu">:</span> <span class="st">"MIT + file LICENSE"</span><span class="fu">,</span></span>
@@ -192,7 +192,7 @@
 <span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
 <span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"files"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"summary"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"total_file_count"</span><span class="fu">:</span> <span class="dv">71</span><span class="fu">,</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"total_file_count"</span><span class="fu">:</span> <span class="dv">73</span><span class="fu">,</span></span>
 <span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"top_level_dir_count"</span><span class="fu">:</span> <span class="dv">5</span><span class="fu">,</span></span>
 <span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"top_level_file_count"</span><span class="fu">:</span> <span class="dv">9</span></span>
 <span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
@@ -248,12 +248,12 @@
 <span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
 <span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"tests"</span><span class="fu">,</span></span>
 <span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"direct_file_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"recursive_file_count"</span><span class="fu">:</span> <span class="dv">22</span><span class="fu">,</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"recursive_file_count"</span><span class="fu">:</span> <span class="dv">24</span><span class="fu">,</span></span>
 <span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"children"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a>          <span class="fu">{</span></span>
 <span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"tests/testthat"</span><span class="fu">,</span></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"direct_file_count"</span><span class="fu">:</span> <span class="dv">21</span><span class="fu">,</span></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"recursive_file_count"</span><span class="fu">:</span> <span class="dv">21</span><span class="fu">,</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"direct_file_count"</span><span class="fu">:</span> <span class="dv">23</span><span class="fu">,</span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"recursive_file_count"</span><span class="fu">:</span> <span class="dv">23</span><span class="fu">,</span></span>
 <span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"children"</span><span class="fu">:</span> <span class="ot">[]</span></span>
 <span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a>          <span class="fu">}</span></span>
 <span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
@@ -288,9 +288,9 @@
 <span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"frameworks"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>      <span class="st">"testthat"</span></span>
 <span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"test_count"</span><span class="fu">:</span> <span class="dv">278</span><span class="fu">,</span></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"test_count"</span><span class="fu">:</span> <span class="dv">283</span><span class="fu">,</span></span>
 <span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"snapshot_count"</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"helper_file_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"helper_file_count"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
 <span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"fixture_dir_count"</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
 <span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"more"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"tests_for"</span><span class="fu">,</span></span>
@@ -299,9 +299,9 @@
 <span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
 <span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"source_objects"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"counts"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"functions"</span><span class="fu">:</span> <span class="dv">275</span><span class="fu">,</span></span>
+<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"functions"</span><span class="fu">:</span> <span class="dv">277</span><span class="fu">,</span></span>
 <span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"r6_classes"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"other_objects"</span><span class="fu">:</span> <span class="dv">4</span></span>
+<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"other_objects"</span><span class="fu">:</span> <span class="dv">2</span></span>
 <span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
 <span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"total_objects"</span><span class="fu">:</span> <span class="dv">281</span><span class="fu">,</span></span>
 <span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"listed_objects"</span><span class="fu">:</span> <span class="dv">20</span><span class="fu">,</span></span>
@@ -329,20 +329,20 @@
 <span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
 <span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"json_response"</span><span class="fu">,</span></span>
 <span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"kind"</span><span class="fu">:</span> <span class="st">"function"</span><span class="fu">,</span></span>
-<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"1-29"</span><span class="fu">,</span></span>
-<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:30-32"</span></span>
+<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"1-11"</span><span class="fu">,</span></span>
+<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:12-14"</span></span>
 <span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
 <span id="cb4-209"><a href="#cb4-209" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"tool_value_response"</span><span class="fu">,</span></span>
 <span id="cb4-210"><a href="#cb4-210" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"kind"</span><span class="fu">:</span> <span class="st">"function"</span><span class="fu">,</span></span>
-<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"34-41"</span><span class="fu">,</span></span>
-<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:42-44"</span></span>
+<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"16-23"</span><span class="fu">,</span></span>
+<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:24-26"</span></span>
 <span id="cb4-213"><a href="#cb4-213" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb4-214"><a href="#cb4-214" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
 <span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"tool_error_response"</span><span class="fu">,</span></span>
 <span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"kind"</span><span class="fu">:</span> <span class="st">"function"</span><span class="fu">,</span></span>
-<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"46-53"</span><span class="fu">,</span></span>
-<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:54-56"</span></span>
+<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"leading_comment_lines"</span><span class="fu">:</span> <span class="st">"28-35"</span><span class="fu">,</span></span>
+<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"R/json-response.R:36-38"</span></span>
 <span id="cb4-219"><a href="#cb4-219" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb4-220"><a href="#cb4-220" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
 <span id="cb4-221"><a href="#cb4-221" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"format_location"</span><span class="fu">,</span></span>
@@ -545,8 +545,8 @@
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/json-response.R"</span><span class="fu">,</span></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"lines"</span><span class="fu">:</span> <span class="dv">56</span><span class="fu">,</span></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">1493</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"lines"</span><span class="fu">:</span> <span class="dv">38</span><span class="fu">,</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">1074</span></span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/location-format.R"</span><span class="fu">,</span></span>
@@ -571,7 +571,7 @@
 <span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/serve.R"</span><span class="fu">,</span></span>
 <span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"lines"</span><span class="fu">:</span> <span class="dv">239</span><span class="fu">,</span></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">6718</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">6722</span></span>
 <span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/source-index.R"</span><span class="fu">,</span></span>
@@ -580,8 +580,8 @@
 <span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/tool-cran.R"</span><span class="fu">,</span></span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"lines"</span><span class="fu">:</span> <span class="dv">246</span><span class="fu">,</span></span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">6167</span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"lines"</span><span class="fu">:</span> <span class="dv">250</span><span class="fu">,</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">6251</span></span>
 <span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"path"</span><span class="fu">:</span> <span class="st">"R/tool-definitions.R"</span><span class="fu">,</span></span>
@@ -839,7 +839,7 @@
 <div class="sourceCode" id="cb16"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"package_root"</span><span class="fu">:</span> <span class="st">"/path/to/rairai"</span><span class="fu">,</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve_tools"</span><span class="fu">,</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">11</span><span class="fu">,</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">12</span><span class="fu">,</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"matches"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-root-isolation.R:93"</span><span class="fu">,</span></span>
@@ -859,79 +859,89 @@
 <span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:68-109"</span><span class="fu">,</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"served tool schemas mark only required public arguments"</span><span class="fu">,</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:68-88"</span><span class="fu">,</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"serve_tools constructs CRAN tools afresh on each call"</span><span class="fu">,</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:69"</span></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:111-140"</span><span class="fu">,</span></span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"only package-local tools expose the optional package root"</span><span class="fu">,</span></span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:112"</span></span>
-<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:142-158"</span><span class="fu">,</span></span>
-<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"reference tools omit the declaration toggle"</span><span class="fu">,</span></span>
-<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:143"</span></span>
-<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:160-197"</span><span class="fu">,</span></span>
-<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"served tool errors are MCP tool-call errors with JSON text"</span><span class="fu">,</span></span>
-<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:162"</span></span>
-<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:261-301"</span><span class="fu">,</span></span>
-<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"invalid JSON-like errors become structured MCP errors"</span><span class="fu">,</span></span>
-<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:266"</span></span>
-<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:337"</span><span class="fu">,</span></span>
-<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="fu">{},</span></span>
-<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:337"</span></span>
-<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-find-test.R:263-269"</span><span class="fu">,</span></span>
-<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"tests_for is the registered public test-discovery tool"</span><span class="fu">,</span></span>
-<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-find-test.R:264"</span></span>
-<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-package-overview.R:828-833"</span><span class="fu">,</span></span>
-<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"package_overview tool is in the served toolset"</span><span class="fu">,</span></span>
-<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-package-overview.R:829"</span></span>
-<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-r6-classes.R:529-536"</span><span class="fu">,</span></span>
-<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"tool_r6_classes is in the served toolset"</span><span class="fu">,</span></span>
-<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-r6-classes.R:530"</span></span>
-<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
-<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
-<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
-<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:68"</span><span class="ot">,</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:83"</span><span class="ot">,</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:86"</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:90-131"</span><span class="fu">,</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"served tool schemas mark only required public arguments"</span><span class="fu">,</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:91"</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:133-162"</span><span class="fu">,</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"only package-local tools expose the optional package root"</span><span class="fu">,</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:134"</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:164-180"</span><span class="fu">,</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"reference tools omit the declaration toggle"</span><span class="fu">,</span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:165"</span></span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:182-219"</span><span class="fu">,</span></span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"served tool errors are MCP tool-call errors with JSON text"</span><span class="fu">,</span></span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:184"</span></span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:283-323"</span><span class="fu">,</span></span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"invalid JSON-like errors become structured MCP errors"</span><span class="fu">,</span></span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:288"</span></span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:359"</span><span class="fu">,</span></span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="fu">{},</span></span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:359"</span></span>
+<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-find-test.R:263-269"</span><span class="fu">,</span></span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"tests_for is the registered public test-discovery tool"</span><span class="fu">,</span></span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-find-test.R:264"</span></span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-package-overview.R:828-833"</span><span class="fu">,</span></span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"package_overview tool is in the served toolset"</span><span class="fu">,</span></span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-package-overview.R:829"</span></span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-r6-classes.R:529-536"</span><span class="fu">,</span></span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"tool_r6_classes is in the served toolset"</span><span class="fu">,</span></span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-r6-classes.R:530"</span></span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
+<span id="cb16-104"><a href="#cb16-104" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb16-105"><a href="#cb16-105" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb16-106"><a href="#cb16-106" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 </section></section><section class="level2"><h3 id="package_docs">
 <code>package_docs</code><a class="anchor" aria-label="anchor" href="#package_docs"></a>
 </h3>
@@ -993,115 +1003,114 @@
 <span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
 <span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span><span class="ot">,</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Examples"</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Serve the MCP tools"</span><span class="fu">,</span></span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>          <span class="st">"serve"</span></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Details"</span><span class="ot">,</span></span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span><span class="ot">,</span></span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>          <span class="st">"See Also"</span><span class="ot">,</span></span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>          <span class="st">"File access and security"</span></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"tool_error_response"</span><span class="fu">,</span></span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Create an MCP tool error response"</span><span class="fu">,</span></span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>          <span class="st">"tool_error_response"</span></span>
-<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
-<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
-<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span></span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"tool_value_response"</span><span class="fu">,</span></span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Create a successful MCP tool response"</span><span class="fu">,</span></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>          <span class="st">"tool_value_response"</span></span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
-<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
-<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
-<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span></span>
-<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
-<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"vignettes"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"available"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
-<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"items"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/design.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"design"</span><span class="fu">,</span></span>
-<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/design.qmd"</span><span class="fu">,</span></span>
-<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Design Principles"</span></span>
-<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
-<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/mcp-tool-schemas.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"mcp-tool-schemas"</span><span class="fu">,</span></span>
-<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/mcp-tool-schemas.qmd"</span><span class="fu">,</span></span>
-<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"MCP tool schemas and example outputs"</span></span>
-<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
-<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/tools.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"tools"</span><span class="fu">,</span></span>
-<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/tools.qmd"</span><span class="fu">,</span></span>
-<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Toolset overview"</span></span>
-<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
-<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"news"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"available"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"NEWS.md"</span><span class="fu">,</span></span>
-<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"latest_version"</span><span class="fu">:</span> <span class="st">"development version"</span><span class="fu">,</span></span>
-<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"latest_heading"</span><span class="fu">:</span> <span class="st">"rairai (development version)"</span><span class="fu">,</span></span>
-<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"version_count"</span><span class="fu">:</span> <span class="dv">12</span></span>
-<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"next_tools"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"help_page"</span><span class="fu">,</span></span>
-<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Read one help topic from the documentation map."</span><span class="fu">,</span></span>
-<span id="cb19-102"><a href="#cb19-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-103"><a href="#cb19-103" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"&lt;topic&gt;"</span><span class="fu">,</span></span>
-<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
-<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"help_search"</span><span class="fu">,</span></span>
-<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Search this package's help topics by name, alias, title, or concept."</span><span class="fu">,</span></span>
-<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"query"</span><span class="fu">:</span> <span class="st">"&lt;query&gt;"</span><span class="fu">,</span></span>
-<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
-<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"package_vignettes"</span><span class="fu">,</span></span>
-<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Retrieve long-form package documentation."</span><span class="fu">,</span></span>
-<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
-<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"package_news"</span><span class="fu">,</span></span>
-<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Inspect release history or behavior changes."</span><span class="fu">,</span></span>
-<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
-<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
-<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
-<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
-<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
-<span id="cb19-130"><a href="#cb19-130" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Serve the MCP tools"</span><span class="fu">,</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>          <span class="st">"serve"</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Details"</span><span class="ot">,</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span><span class="ot">,</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>          <span class="st">"See Also"</span><span class="ot">,</span></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>          <span class="st">"File access and security"</span></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"tool_error_response"</span><span class="fu">,</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Create an MCP tool error response"</span><span class="fu">,</span></span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>          <span class="st">"tool_error_response"</span></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>      <span class="fu">{</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"tool_value_response"</span><span class="fu">,</span></span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Create a successful MCP tool response"</span><span class="fu">,</span></span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"aliases"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>          <span class="st">"tool_value_response"</span></span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"sections"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Description"</span><span class="ot">,</span></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Usage"</span><span class="ot">,</span></span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Arguments"</span><span class="ot">,</span></span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>          <span class="st">"Value"</span></span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>        <span class="ot">]</span></span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"vignettes"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"available"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"items"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/design.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"design"</span><span class="fu">,</span></span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/design.qmd"</span><span class="fu">,</span></span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Design Principles"</span></span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/mcp-tool-schemas.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"mcp-tool-schemas"</span><span class="fu">,</span></span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/mcp-tool-schemas.qmd"</span><span class="fu">,</span></span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"MCP tool schemas and example outputs"</span></span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"/path/to/rairai/vignettes/tools.qmd"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"tools"</span><span class="fu">,</span></span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"file"</span><span class="fu">:</span> <span class="st">"vignettes/tools.qmd"</span><span class="fu">,</span></span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Toolset overview"</span></span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"news"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"available"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"NEWS.md"</span><span class="fu">,</span></span>
+<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"latest_version"</span><span class="fu">:</span> <span class="st">"development version"</span><span class="fu">,</span></span>
+<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"latest_heading"</span><span class="fu">:</span> <span class="st">"rairai (development version)"</span><span class="fu">,</span></span>
+<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"version_count"</span><span class="fu">:</span> <span class="dv">13</span></span>
+<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"next_tools"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"help_page"</span><span class="fu">,</span></span>
+<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Read one help topic from the documentation map."</span><span class="fu">,</span></span>
+<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-102"><a href="#cb19-102" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"topic"</span><span class="fu">:</span> <span class="st">"&lt;topic&gt;"</span><span class="fu">,</span></span>
+<span id="cb19-103"><a href="#cb19-103" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
+<span id="cb19-104"><a href="#cb19-104" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-105"><a href="#cb19-105" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-106"><a href="#cb19-106" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb19-107"><a href="#cb19-107" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"help_search"</span><span class="fu">,</span></span>
+<span id="cb19-108"><a href="#cb19-108" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Search this package's help topics by name, alias, title, or concept."</span><span class="fu">,</span></span>
+<span id="cb19-109"><a href="#cb19-109" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-110"><a href="#cb19-110" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"query"</span><span class="fu">:</span> <span class="st">"&lt;query&gt;"</span><span class="fu">,</span></span>
+<span id="cb19-111"><a href="#cb19-111" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
+<span id="cb19-112"><a href="#cb19-112" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-113"><a href="#cb19-113" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-114"><a href="#cb19-114" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb19-115"><a href="#cb19-115" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"package_vignettes"</span><span class="fu">,</span></span>
+<span id="cb19-116"><a href="#cb19-116" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Retrieve long-form package documentation."</span><span class="fu">,</span></span>
+<span id="cb19-117"><a href="#cb19-117" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-118"><a href="#cb19-118" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
+<span id="cb19-119"><a href="#cb19-119" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-120"><a href="#cb19-120" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb19-121"><a href="#cb19-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb19-122"><a href="#cb19-122" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"tool"</span><span class="fu">:</span> <span class="st">"package_news"</span><span class="fu">,</span></span>
+<span id="cb19-123"><a href="#cb19-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"reason"</span><span class="fu">:</span> <span class="st">"Inspect release history or behavior changes."</span><span class="fu">,</span></span>
+<span id="cb19-124"><a href="#cb19-124" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"arguments"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb19-125"><a href="#cb19-125" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"package"</span><span class="fu">:</span> <span class="st">"rairai"</span></span>
+<span id="cb19-126"><a href="#cb19-126" aria-hidden="true" tabindex="-1"></a>      <span class="fu">}</span></span>
+<span id="cb19-127"><a href="#cb19-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb19-128"><a href="#cb19-128" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb19-129"><a href="#cb19-129" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 </section></section><section class="level2"><h3 id="help_search">
 <code>help_search</code><a class="anchor" aria-label="anchor" href="#help_search"></a>
 </h3>
@@ -1406,7 +1415,7 @@
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"truncated"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"entries"</span><span class="fu">:</span> <span class="ot">[]</span></span>
 <span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">12</span><span class="fu">,</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"count"</span><span class="fu">:</span> <span class="dv">13</span><span class="fu">,</span></span>
 <span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"versions"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai (development version)"</span><span class="fu">,</span></span>
@@ -1414,62 +1423,67 @@
 <span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:1-2"</span></span>
 <span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.6"</span><span class="fu">,</span></span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.6"</span><span class="fu">,</span></span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:3-6"</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.7"</span><span class="fu">,</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.7"</span><span class="fu">,</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:3-8"</span></span>
 <span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.5"</span><span class="fu">,</span></span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.5"</span><span class="fu">,</span></span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:7-10"</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.6"</span><span class="fu">,</span></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.6"</span><span class="fu">,</span></span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:9-12"</span></span>
 <span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.4"</span><span class="fu">,</span></span>
-<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.4"</span><span class="fu">,</span></span>
-<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:11-14"</span></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.5"</span><span class="fu">,</span></span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.5"</span><span class="fu">,</span></span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:13-16"</span></span>
 <span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.3"</span><span class="fu">,</span></span>
-<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.3"</span><span class="fu">,</span></span>
-<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:15-18"</span></span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.4"</span><span class="fu">,</span></span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.4"</span><span class="fu">,</span></span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:17-20"</span></span>
 <span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.2"</span><span class="fu">,</span></span>
-<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.2"</span><span class="fu">,</span></span>
-<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:19-22"</span></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.3"</span><span class="fu">,</span></span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.3"</span><span class="fu">,</span></span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:21-24"</span></span>
 <span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.1"</span><span class="fu">,</span></span>
-<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.1"</span><span class="fu">,</span></span>
-<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:23-26"</span></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.2"</span><span class="fu">,</span></span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.2"</span><span class="fu">,</span></span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:25-28"</span></span>
 <span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.0"</span><span class="fu">,</span></span>
-<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.0"</span><span class="fu">,</span></span>
-<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:27-36"</span></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.1"</span><span class="fu">,</span></span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.1"</span><span class="fu">,</span></span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:29-32"</span></span>
 <span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.2"</span><span class="fu">,</span></span>
-<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.2"</span><span class="fu">,</span></span>
-<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:37-40"</span></span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.2.0"</span><span class="fu">,</span></span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.2.0"</span><span class="fu">,</span></span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:33-42"</span></span>
 <span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.1"</span><span class="fu">,</span></span>
-<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.1"</span><span class="fu">,</span></span>
-<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:41-47"</span></span>
+<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.2"</span><span class="fu">,</span></span>
+<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.2"</span><span class="fu">,</span></span>
+<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:43-46"</span></span>
 <span id="cb31-66"><a href="#cb31-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-67"><a href="#cb31-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.0"</span><span class="fu">,</span></span>
-<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.0"</span><span class="fu">,</span></span>
-<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:48-53"</span></span>
+<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.1"</span><span class="fu">,</span></span>
+<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.1"</span><span class="fu">,</span></span>
+<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:47-53"</span></span>
 <span id="cb31-71"><a href="#cb31-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.0.1"</span><span class="fu">,</span></span>
-<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.0.1"</span><span class="fu">,</span></span>
-<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:54-111"</span></span>
-<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
-<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
-<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.1.0"</span><span class="fu">,</span></span>
+<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.1.0"</span><span class="fu">,</span></span>
+<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:54-59"</span></span>
+<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"heading"</span><span class="fu">:</span> <span class="st">"rairai 0.0.1"</span><span class="fu">,</span></span>
+<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"version"</span><span class="fu">:</span> <span class="st">"0.0.1"</span><span class="fu">,</span></span>
+<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"NEWS.md:60-117"</span></span>
+<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb31-82"><a href="#cb31-82" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb31-83"><a href="#cb31-83" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
 <div class="sourceCode cell-code" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">emit_tool_group</span><span class="op">(</span></span>
 <span>  <span class="st">"R6 structure tools"</span>,</span>
@@ -1893,42 +1907,42 @@
 <span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols()"</span><span class="fu">,</span></span>
-<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:111"</span></span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:108"</span></span>
 <span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-51"><a href="#cb44-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols(path = </span><span class="ch">\"</span><span class="st">R/core.R</span><span class="ch">\"</span><span class="st">)"</span><span class="fu">,</span></span>
-<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:145"</span></span>
+<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:142"</span></span>
 <span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-56"><a href="#cb44-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols(kind = </span><span class="ch">\"</span><span class="st">Function</span><span class="ch">\"</span><span class="st">)"</span><span class="fu">,</span></span>
-<span id="cb44-57"><a href="#cb44-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:212"</span></span>
+<span id="cb44-57"><a href="#cb44-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:209"</span></span>
 <span id="cb44-58"><a href="#cb44-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-59"><a href="#cb44-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-60"><a href="#cb44-60" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-61"><a href="#cb44-61" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols(query = </span><span class="ch">\"</span><span class="st">target</span><span class="ch">\"</span><span class="st">)"</span><span class="fu">,</span></span>
-<span id="cb44-62"><a href="#cb44-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:302"</span></span>
+<span id="cb44-62"><a href="#cb44-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:299"</span></span>
 <span id="cb44-63"><a href="#cb44-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-65"><a href="#cb44-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols(query = </span><span class="ch">\"</span><span class="st">target</span><span class="ch">\"</span><span class="st">)"</span><span class="fu">,</span></span>
-<span id="cb44-67"><a href="#cb44-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:307"</span></span>
+<span id="cb44-67"><a href="#cb44-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:304"</span></span>
 <span id="cb44-68"><a href="#cb44-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-69"><a href="#cb44-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-70"><a href="#cb44-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-71"><a href="#cb44-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols()"</span><span class="fu">,</span></span>
-<span id="cb44-72"><a href="#cb44-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:309"</span></span>
+<span id="cb44-72"><a href="#cb44-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:306"</span></span>
 <span id="cb44-73"><a href="#cb44-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-74"><a href="#cb44-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-75"><a href="#cb44-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-76"><a href="#cb44-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols()"</span><span class="fu">,</span></span>
-<span id="cb44-77"><a href="#cb44-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:379"</span></span>
+<span id="cb44-77"><a href="#cb44-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:376"</span></span>
 <span id="cb44-78"><a href="#cb44-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-79"><a href="#cb44-79" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-80"><a href="#cb44-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"s"</span><span class="fu">,</span></span>
 <span id="cb44-81"><a href="#cb44-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"call"</span><span class="fu">:</span> <span class="st">"s$symbols()"</span><span class="fu">,</span></span>
-<span id="cb44-82"><a href="#cb44-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:451"</span></span>
+<span id="cb44-82"><a href="#cb44-82" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-source-containment.R:448"</span></span>
 <span id="cb44-83"><a href="#cb44-83" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb44-84"><a href="#cb44-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb44-85"><a href="#cb44-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"object"</span><span class="fu">:</span> <span class="st">"service"</span><span class="fu">,</span></span>
@@ -2276,25 +2290,25 @@
 <span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:368:21-368:26"</span></span>
+<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:390:21-390:26"</span></span>
 <span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:386:21-386:26"</span></span>
+<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:408:21-408:26"</span></span>
 <span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb54-57"><a href="#cb54-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb54-58"><a href="#cb54-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb54-59"><a href="#cb54-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:405:15-405:20"</span></span>
+<span id="cb54-59"><a href="#cb54-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:427:15-427:20"</span></span>
 <span id="cb54-60"><a href="#cb54-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb54-61"><a href="#cb54-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb54-62"><a href="#cb54-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb54-63"><a href="#cb54-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb54-64"><a href="#cb54-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb54-65"><a href="#cb54-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:413:15-413:20"</span></span>
+<span id="cb54-65"><a href="#cb54-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:435:15-435:20"</span></span>
 <span id="cb54-66"><a href="#cb54-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
 <span id="cb54-67"><a href="#cb54-67" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
 <span id="cb54-68"><a href="#cb54-68" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
@@ -2468,25 +2482,25 @@
 <span id="cb60-34"><a href="#cb60-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb60-35"><a href="#cb60-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb60-36"><a href="#cb60-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:368:21-368:26"</span></span>
+<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:390:21-390:26"</span></span>
 <span id="cb60-38"><a href="#cb60-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-39"><a href="#cb60-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb60-40"><a href="#cb60-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb60-41"><a href="#cb60-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb60-42"><a href="#cb60-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb60-43"><a href="#cb60-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:386:21-386:26"</span></span>
+<span id="cb60-43"><a href="#cb60-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:408:21-408:26"</span></span>
 <span id="cb60-44"><a href="#cb60-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-45"><a href="#cb60-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb60-46"><a href="#cb60-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb60-47"><a href="#cb60-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb60-48"><a href="#cb60-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb60-49"><a href="#cb60-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:405:15-405:20"</span></span>
+<span id="cb60-49"><a href="#cb60-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:427:15-427:20"</span></span>
 <span id="cb60-50"><a href="#cb60-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-51"><a href="#cb60-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
 <span id="cb60-52"><a href="#cb60-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"serve"</span><span class="fu">,</span></span>
 <span id="cb60-53"><a href="#cb60-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"source"</span><span class="fu">:</span> <span class="st">"tree_sitter_source_index"</span><span class="fu">,</span></span>
 <span id="cb60-54"><a href="#cb60-54" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"role"</span><span class="fu">:</span> <span class="st">"namespace_call"</span><span class="fu">,</span></span>
-<span id="cb60-55"><a href="#cb60-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:413:15-413:20"</span></span>
+<span id="cb60-55"><a href="#cb60-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:435:15-435:20"</span></span>
 <span id="cb60-56"><a href="#cb60-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
 <span id="cb60-57"><a href="#cb60-57" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb60-58"><a href="#cb60-58" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"reference_semantics"</span><span class="fu">:</span> <span class="st">"syntactic_impact_references"</span><span class="fu">,</span></span>
@@ -2506,40 +2520,40 @@
 <span id="cb60-72"><a href="#cb60-72" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"related_test_count"</span><span class="fu">:</span> <span class="dv">12</span><span class="fu">,</span></span>
 <span id="cb60-73"><a href="#cb60-73" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"related_tests"</span><span class="fu">:</span> <span class="ot">[</span></span>
 <span id="cb60-74"><a href="#cb60-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-75"><a href="#cb60-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:358-376"</span><span class="fu">,</span></span>
+<span id="cb60-75"><a href="#cb60-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:380-398"</span><span class="fu">,</span></span>
 <span id="cb60-76"><a href="#cb60-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"serve uses explicit path without changing working directory"</span><span class="fu">,</span></span>
 <span id="cb60-77"><a href="#cb60-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
 <span id="cb60-78"><a href="#cb60-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-79"><a href="#cb60-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:358"</span><span class="ot">,</span></span>
-<span id="cb60-80"><a href="#cb60-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:368"</span></span>
+<span id="cb60-79"><a href="#cb60-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:380"</span><span class="ot">,</span></span>
+<span id="cb60-80"><a href="#cb60-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:390"</span></span>
 <span id="cb60-81"><a href="#cb60-81" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-82"><a href="#cb60-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-83"><a href="#cb60-83" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-84"><a href="#cb60-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:378-393"</span><span class="fu">,</span></span>
+<span id="cb60-84"><a href="#cb60-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:400-415"</span><span class="fu">,</span></span>
 <span id="cb60-85"><a href="#cb60-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"serve defaults to the current working directory"</span><span class="fu">,</span></span>
 <span id="cb60-86"><a href="#cb60-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
 <span id="cb60-87"><a href="#cb60-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-88"><a href="#cb60-88" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:378"</span><span class="ot">,</span></span>
-<span id="cb60-89"><a href="#cb60-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:386"</span></span>
+<span id="cb60-88"><a href="#cb60-88" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:400"</span><span class="ot">,</span></span>
+<span id="cb60-89"><a href="#cb60-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:408"</span></span>
 <span id="cb60-90"><a href="#cb60-90" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-91"><a href="#cb60-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-92"><a href="#cb60-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-93"><a href="#cb60-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:395-400"</span><span class="fu">,</span></span>
+<span id="cb60-93"><a href="#cb60-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:417-422"</span><span class="fu">,</span></span>
 <span id="cb60-94"><a href="#cb60-94" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"serve path normalization expands common path forms"</span><span class="fu">,</span></span>
 <span id="cb60-95"><a href="#cb60-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
 <span id="cb60-96"><a href="#cb60-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-97"><a href="#cb60-97" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:395"</span></span>
+<span id="cb60-97"><a href="#cb60-97" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:417"</span></span>
 <span id="cb60-98"><a href="#cb60-98" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-99"><a href="#cb60-99" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-100"><a href="#cb60-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-101"><a href="#cb60-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:402-418"</span><span class="fu">,</span></span>
+<span id="cb60-101"><a href="#cb60-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-serve-tools.R:424-440"</span><span class="fu">,</span></span>
 <span id="cb60-102"><a href="#cb60-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"serve path must be one existing directory"</span><span class="fu">,</span></span>
 <span id="cb60-103"><a href="#cb60-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
 <span id="cb60-104"><a href="#cb60-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-105"><a href="#cb60-105" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:402"</span><span class="ot">,</span></span>
-<span id="cb60-106"><a href="#cb60-106" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:405"</span><span class="ot">,</span></span>
-<span id="cb60-107"><a href="#cb60-107" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:411"</span><span class="ot">,</span></span>
-<span id="cb60-108"><a href="#cb60-108" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:413"</span></span>
+<span id="cb60-105"><a href="#cb60-105" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:424"</span><span class="ot">,</span></span>
+<span id="cb60-106"><a href="#cb60-106" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:427"</span><span class="ot">,</span></span>
+<span id="cb60-107"><a href="#cb60-107" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:433"</span><span class="ot">,</span></span>
+<span id="cb60-108"><a href="#cb60-108" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-serve-tools.R:435"</span></span>
 <span id="cb60-109"><a href="#cb60-109" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-110"><a href="#cb60-110" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-111"><a href="#cb60-111" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
@@ -2561,22 +2575,22 @@
 <span id="cb60-127"><a href="#cb60-127" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-128"><a href="#cb60-128" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-129"><a href="#cb60-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-130"><a href="#cb60-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-help.R:219-227"</span><span class="fu">,</span></span>
+<span id="cb60-130"><a href="#cb60-130" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-help.R:218-226"</span><span class="fu">,</span></span>
 <span id="cb60-131"><a href="#cb60-131" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"help_page treats NULL and empty package as unspecified"</span><span class="fu">,</span></span>
 <span id="cb60-132"><a href="#cb60-132" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span></span>
 <span id="cb60-133"><a href="#cb60-133" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-134"><a href="#cb60-134" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:220"</span><span class="ot">,</span></span>
-<span id="cb60-135"><a href="#cb60-135" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:221"</span></span>
+<span id="cb60-134"><a href="#cb60-134" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:219"</span><span class="ot">,</span></span>
+<span id="cb60-135"><a href="#cb60-135" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:220"</span></span>
 <span id="cb60-136"><a href="#cb60-136" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-137"><a href="#cb60-137" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-138"><a href="#cb60-138" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
-<span id="cb60-139"><a href="#cb60-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-help.R:288-306"</span><span class="fu">,</span></span>
+<span id="cb60-139"><a href="#cb60-139" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"location"</span><span class="fu">:</span> <span class="st">"tests/testthat/test-tool-help.R:287-305"</span><span class="fu">,</span></span>
 <span id="cb60-140"><a href="#cb60-140" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"desc"</span><span class="fu">:</span> <span class="st">"help_search returns ranked scoped matches for a valid query"</span><span class="fu">,</span></span>
 <span id="cb60-141"><a href="#cb60-141" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hit_count"</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span></span>
 <span id="cb60-142"><a href="#cb60-142" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-143"><a href="#cb60-143" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:289"</span><span class="ot">,</span></span>
-<span id="cb60-144"><a href="#cb60-144" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:291"</span><span class="ot">,</span></span>
-<span id="cb60-145"><a href="#cb60-145" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:302"</span></span>
+<span id="cb60-143"><a href="#cb60-143" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:288"</span><span class="ot">,</span></span>
+<span id="cb60-144"><a href="#cb60-144" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:290"</span><span class="ot">,</span></span>
+<span id="cb60-145"><a href="#cb60-145" aria-hidden="true" tabindex="-1"></a>        <span class="st">"tests/testthat/test-tool-help.R:301"</span></span>
 <span id="cb60-146"><a href="#cb60-146" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span></span>
 <span id="cb60-147"><a href="#cb60-147" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="ot">,</span></span>
 <span id="cb60-148"><a href="#cb60-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
@@ -2615,24 +2629,24 @@
 <span id="cb60-181"><a href="#cb60-181" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
 <span id="cb60-182"><a href="#cb60-182" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"test_text_hit_count"</span><span class="fu">:</span> <span class="dv">23</span><span class="fu">,</span></span>
 <span id="cb60-183"><a href="#cb60-183" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"test_text_hits"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb60-184"><a href="#cb60-184" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:358"</span><span class="ot">,</span></span>
-<span id="cb60-185"><a href="#cb60-185" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:368"</span><span class="ot">,</span></span>
-<span id="cb60-186"><a href="#cb60-186" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:378"</span><span class="ot">,</span></span>
-<span id="cb60-187"><a href="#cb60-187" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:386"</span><span class="ot">,</span></span>
-<span id="cb60-188"><a href="#cb60-188" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:395"</span><span class="ot">,</span></span>
-<span id="cb60-189"><a href="#cb60-189" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:402"</span><span class="ot">,</span></span>
-<span id="cb60-190"><a href="#cb60-190" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:405"</span><span class="ot">,</span></span>
-<span id="cb60-191"><a href="#cb60-191" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:411"</span><span class="ot">,</span></span>
-<span id="cb60-192"><a href="#cb60-192" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:413"</span><span class="ot">,</span></span>
+<span id="cb60-184"><a href="#cb60-184" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:380"</span><span class="ot">,</span></span>
+<span id="cb60-185"><a href="#cb60-185" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:390"</span><span class="ot">,</span></span>
+<span id="cb60-186"><a href="#cb60-186" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:400"</span><span class="ot">,</span></span>
+<span id="cb60-187"><a href="#cb60-187" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:408"</span><span class="ot">,</span></span>
+<span id="cb60-188"><a href="#cb60-188" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:417"</span><span class="ot">,</span></span>
+<span id="cb60-189"><a href="#cb60-189" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:424"</span><span class="ot">,</span></span>
+<span id="cb60-190"><a href="#cb60-190" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:427"</span><span class="ot">,</span></span>
+<span id="cb60-191"><a href="#cb60-191" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:433"</span><span class="ot">,</span></span>
+<span id="cb60-192"><a href="#cb60-192" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-serve-tools.R:435"</span><span class="ot">,</span></span>
 <span id="cb60-193"><a href="#cb60-193" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:60"</span><span class="ot">,</span></span>
 <span id="cb60-194"><a href="#cb60-194" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:62"</span><span class="ot">,</span></span>
 <span id="cb60-195"><a href="#cb60-195" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:67"</span><span class="ot">,</span></span>
 <span id="cb60-196"><a href="#cb60-196" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:176"</span><span class="ot">,</span></span>
-<span id="cb60-197"><a href="#cb60-197" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:220"</span><span class="ot">,</span></span>
-<span id="cb60-198"><a href="#cb60-198" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:221"</span><span class="ot">,</span></span>
-<span id="cb60-199"><a href="#cb60-199" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:289"</span><span class="ot">,</span></span>
-<span id="cb60-200"><a href="#cb60-200" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:291"</span><span class="ot">,</span></span>
-<span id="cb60-201"><a href="#cb60-201" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:302"</span><span class="ot">,</span></span>
+<span id="cb60-197"><a href="#cb60-197" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:219"</span><span class="ot">,</span></span>
+<span id="cb60-198"><a href="#cb60-198" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:220"</span><span class="ot">,</span></span>
+<span id="cb60-199"><a href="#cb60-199" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:288"</span><span class="ot">,</span></span>
+<span id="cb60-200"><a href="#cb60-200" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:290"</span><span class="ot">,</span></span>
+<span id="cb60-201"><a href="#cb60-201" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-help.R:301"</span><span class="ot">,</span></span>
 <span id="cb60-202"><a href="#cb60-202" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-package-docs.R:83"</span><span class="ot">,</span></span>
 <span id="cb60-203"><a href="#cb60-203" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-package-docs.R:84"</span><span class="ot">,</span></span>
 <span id="cb60-204"><a href="#cb60-204" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests/testthat/test-tool-package-namespace.R:16"</span><span class="ot">,</span></span>

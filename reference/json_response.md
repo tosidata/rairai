@@ -23,24 +23,3 @@ json_response(..., auto_unbox = TRUE)
 ## Value
 
 A JSON object string.
-
-## Examples
-
-``` r
-stopifnot(identical(
-  as.character(rairai:::json_response(a = NULL)),
-  '{"a":{}}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = list())),
-  '{"a":[]}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = NA)),
-  '{"a":null}'
-))
-stopifnot(identical(
-  as.character(rairai:::json_response(a = I(NA))),
-  '{"a":[null]}'
-))
-```

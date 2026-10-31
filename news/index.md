@@ -2,6 +2,15 @@
 
 ## rairai (development version)
 
+## rairai 0.2.7
+
+- Construct CRAN tool definitions when the server starts instead of
+  during package installation.
+- Fix schema extraction in tests and the vignette with mcplite 0.2.0,
+  retaining compatibility with 0.1.0.
+- Revise the package title and remove internal-helper examples following
+  CRAN review.
+
 ## rairai 0.2.6
 
 - Source navigation, R6 tools, test lookup, and overview source

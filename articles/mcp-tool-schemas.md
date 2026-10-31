@@ -18,10 +18,8 @@ paths. Source-relative locations are unchanged.
 Each section below is produced from the live tool definitions in this
 package:
 
-- The schema comes from the
-  [`mcplite::tool()`](https://tosidata.github.io/mcplite/reference/tool.html)
-  object after conversion to MCP tool JSON for protocol version
-  `2025-11-25`.
+- The schema comes from a `tools/list` response after negotiating MCP
+  protocol version `2025-11-25` with `mcplite`.
 - The example input is a small argument list chosen to exercise the tool
   against this repository.
 - Each local response is produced by calling the tool during rendering.
@@ -95,8 +93,8 @@ namespace, file layout, docs, tests, and source objects.
   "description": {
     "fields": {
       "Package": "rairai",
-      "Title": "'R' Package Intelligence MCP Server",
-      "Version": "0.2.6",
+      "Title": "Model Context Protocol Server for Package Intelligence",
+      "Version": "0.2.7",
       "Authors@R": "person(\"Juha\", \"Itkonen\", , \"juha@tosidata.com\", role = c(\"aut\", \"cre\"))",
       "Description": "Helps artificial intelligence (AI) agents develop 'R' packages\nmore efficiently and make better-informed code changes. Provides focused,\npackage-aware context through the Model Context Protocol (MCP) so agents\ncan understand existing behavior and assess changes with less manual\nexploration. Inspects packages without loading or executing their code.",
       "License": "MIT + file LICENSE",
@@ -157,7 +155,7 @@ namespace, file layout, docs, tests, and source objects.
   },
   "files": {
     "summary": {
-      "total_file_count": 71,
+      "total_file_count": 73,
       "top_level_dir_count": 5,
       "top_level_file_count": 9
     },
@@ -213,12 +211,12 @@ namespace, file layout, docs, tests, and source objects.
       {
         "path": "tests",
         "direct_file_count": 1,
-        "recursive_file_count": 22,
+        "recursive_file_count": 24,
         "children": [
           {
             "path": "tests/testthat",
-            "direct_file_count": 21,
-            "recursive_file_count": 21,
+            "direct_file_count": 23,
+            "recursive_file_count": 23,
             "children": []
           }
         ]
@@ -253,9 +251,9 @@ namespace, file layout, docs, tests, and source objects.
     "frameworks": [
       "testthat"
     ],
-    "test_count": 278,
+    "test_count": 283,
     "snapshot_count": 0,
-    "helper_file_count": 1,
+    "helper_file_count": 2,
     "fixture_dir_count": 0,
     "more": {
       "tool": "tests_for",
@@ -264,9 +262,9 @@ namespace, file layout, docs, tests, and source objects.
   },
   "source_objects": {
     "counts": {
-      "functions": 275,
+      "functions": 277,
       "r6_classes": 2,
-      "other_objects": 4
+      "other_objects": 2
     },
     "total_objects": 281,
     "listed_objects": 20,
@@ -294,20 +292,20 @@ namespace, file layout, docs, tests, and source objects.
       {
         "name": "json_response",
         "kind": "function",
-        "leading_comment_lines": "1-29",
-        "location": "R/json-response.R:30-32"
+        "leading_comment_lines": "1-11",
+        "location": "R/json-response.R:12-14"
       },
       {
         "name": "tool_value_response",
         "kind": "function",
-        "leading_comment_lines": "34-41",
-        "location": "R/json-response.R:42-44"
+        "leading_comment_lines": "16-23",
+        "location": "R/json-response.R:24-26"
       },
       {
         "name": "tool_error_response",
         "kind": "function",
-        "leading_comment_lines": "46-53",
-        "location": "R/json-response.R:54-56"
+        "leading_comment_lines": "28-35",
+        "location": "R/json-response.R:36-38"
       },
       {
         "name": "format_location",
@@ -528,8 +526,8 @@ List package files by development area.
     },
     {
       "path": "R/json-response.R",
-      "lines": 56,
-      "size": 1493
+      "lines": 38,
+      "size": 1074
     },
     {
       "path": "R/location-format.R",
@@ -554,7 +552,7 @@ List package files by development area.
     {
       "path": "R/serve.R",
       "lines": 239,
-      "size": 6718
+      "size": 6722
     },
     {
       "path": "R/source-index.R",
@@ -563,8 +561,8 @@ List package files by development area.
     },
     {
       "path": "R/tool-cran.R",
-      "lines": 246,
-      "size": 6167
+      "lines": 250,
+      "size": 6251
     },
     {
       "path": "R/tool-definitions.R",
@@ -842,7 +840,7 @@ changing behavior to locate related tests.
 {
   "package_root": "/path/to/rairai",
   "name": "serve_tools",
-  "count": 11,
+  "count": 12,
   "matches": [
     {
       "location": "tests/testthat/test-root-isolation.R:93",
@@ -862,51 +860,61 @@ changing behavior to locate related tests.
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:68-109",
+      "location": "tests/testthat/test-serve-tools.R:68-88",
+      "desc": "serve_tools constructs CRAN tools afresh on each call",
+      "hit_count": 3,
+      "hits": [
+        "tests/testthat/test-serve-tools.R:68",
+        "tests/testthat/test-serve-tools.R:83",
+        "tests/testthat/test-serve-tools.R:86"
+      ]
+    },
+    {
+      "location": "tests/testthat/test-serve-tools.R:90-131",
       "desc": "served tool schemas mark only required public arguments",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:69"
+        "tests/testthat/test-serve-tools.R:91"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:111-140",
+      "location": "tests/testthat/test-serve-tools.R:133-162",
       "desc": "only package-local tools expose the optional package root",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:112"
+        "tests/testthat/test-serve-tools.R:134"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:142-158",
+      "location": "tests/testthat/test-serve-tools.R:164-180",
       "desc": "reference tools omit the declaration toggle",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:143"
+        "tests/testthat/test-serve-tools.R:165"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:160-197",
+      "location": "tests/testthat/test-serve-tools.R:182-219",
       "desc": "served tool errors are MCP tool-call errors with JSON text",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:162"
+        "tests/testthat/test-serve-tools.R:184"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:261-301",
+      "location": "tests/testthat/test-serve-tools.R:283-323",
       "desc": "invalid JSON-like errors become structured MCP errors",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:266"
+        "tests/testthat/test-serve-tools.R:288"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:337",
+      "location": "tests/testthat/test-serve-tools.R:359",
       "desc": {},
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:337"
+        "tests/testthat/test-serve-tools.R:359"
       ]
     },
     {
@@ -1006,8 +1014,7 @@ vignettes, and NEWS.
           "Description",
           "Usage",
           "Arguments",
-          "Value",
-          "Examples"
+          "Value"
         ]
       },
       {
@@ -1080,7 +1087,7 @@ vignettes, and NEWS.
     "source": "NEWS.md",
     "latest_version": "development version",
     "latest_heading": "rairai (development version)",
-    "version_count": 12
+    "version_count": 13
   },
   "next_tools": [
     {
@@ -1455,7 +1462,7 @@ Read package NEWS entries for release history and behavior changes.
     "truncated": false,
     "entries": []
   },
-  "count": 12,
+  "count": 13,
   "versions": [
     {
       "heading": "rairai (development version)",
@@ -1463,59 +1470,64 @@ Read package NEWS entries for release history and behavior changes.
       "location": "NEWS.md:1-2"
     },
     {
+      "heading": "rairai 0.2.7",
+      "version": "0.2.7",
+      "location": "NEWS.md:3-8"
+    },
+    {
       "heading": "rairai 0.2.6",
       "version": "0.2.6",
-      "location": "NEWS.md:3-6"
+      "location": "NEWS.md:9-12"
     },
     {
       "heading": "rairai 0.2.5",
       "version": "0.2.5",
-      "location": "NEWS.md:7-10"
+      "location": "NEWS.md:13-16"
     },
     {
       "heading": "rairai 0.2.4",
       "version": "0.2.4",
-      "location": "NEWS.md:11-14"
+      "location": "NEWS.md:17-20"
     },
     {
       "heading": "rairai 0.2.3",
       "version": "0.2.3",
-      "location": "NEWS.md:15-18"
+      "location": "NEWS.md:21-24"
     },
     {
       "heading": "rairai 0.2.2",
       "version": "0.2.2",
-      "location": "NEWS.md:19-22"
+      "location": "NEWS.md:25-28"
     },
     {
       "heading": "rairai 0.2.1",
       "version": "0.2.1",
-      "location": "NEWS.md:23-26"
+      "location": "NEWS.md:29-32"
     },
     {
       "heading": "rairai 0.2.0",
       "version": "0.2.0",
-      "location": "NEWS.md:27-36"
+      "location": "NEWS.md:33-42"
     },
     {
       "heading": "rairai 0.1.2",
       "version": "0.1.2",
-      "location": "NEWS.md:37-40"
+      "location": "NEWS.md:43-46"
     },
     {
       "heading": "rairai 0.1.1",
       "version": "0.1.1",
-      "location": "NEWS.md:41-47"
+      "location": "NEWS.md:47-53"
     },
     {
       "heading": "rairai 0.1.0",
       "version": "0.1.0",
-      "location": "NEWS.md:48-53"
+      "location": "NEWS.md:54-59"
     },
     {
       "heading": "rairai 0.0.1",
       "version": "0.0.1",
-      "location": "NEWS.md:54-111"
+      "location": "NEWS.md:60-117"
     }
   ]
 }
@@ -1984,42 +1996,42 @@ name-based and may include calls on other object types.
     {
       "object": "s",
       "call": "s$symbols()",
-      "location": "tests/testthat/test-source-containment.R:111"
+      "location": "tests/testthat/test-source-containment.R:108"
     },
     {
       "object": "s",
       "call": "s$symbols(path = \"R/core.R\")",
-      "location": "tests/testthat/test-source-containment.R:145"
+      "location": "tests/testthat/test-source-containment.R:142"
     },
     {
       "object": "s",
       "call": "s$symbols(kind = \"Function\")",
-      "location": "tests/testthat/test-source-containment.R:212"
+      "location": "tests/testthat/test-source-containment.R:209"
     },
     {
       "object": "s",
       "call": "s$symbols(query = \"target\")",
-      "location": "tests/testthat/test-source-containment.R:302"
+      "location": "tests/testthat/test-source-containment.R:299"
     },
     {
       "object": "s",
       "call": "s$symbols(query = \"target\")",
-      "location": "tests/testthat/test-source-containment.R:307"
+      "location": "tests/testthat/test-source-containment.R:304"
     },
     {
       "object": "s",
       "call": "s$symbols()",
-      "location": "tests/testthat/test-source-containment.R:309"
+      "location": "tests/testthat/test-source-containment.R:306"
     },
     {
       "object": "s",
       "call": "s$symbols()",
-      "location": "tests/testthat/test-source-containment.R:379"
+      "location": "tests/testthat/test-source-containment.R:376"
     },
     {
       "object": "s",
       "call": "s$symbols()",
-      "location": "tests/testthat/test-source-containment.R:451"
+      "location": "tests/testthat/test-source-containment.R:448"
     },
     {
       "object": "service",
@@ -2398,25 +2410,25 @@ The resolved declaration is reported separately.
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:368:21-368:26"
+      "location": "tests/testthat/test-serve-tools.R:390:21-390:26"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:386:21-386:26"
+      "location": "tests/testthat/test-serve-tools.R:408:21-408:26"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:405:15-405:20"
+      "location": "tests/testthat/test-serve-tools.R:427:15-427:20"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:413:15-413:20"
+      "location": "tests/testthat/test-serve-tools.R:435:15-435:20"
     }
   ]
 }
@@ -2610,25 +2622,25 @@ tests, and export status.
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:368:21-368:26"
+      "location": "tests/testthat/test-serve-tools.R:390:21-390:26"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:386:21-386:26"
+      "location": "tests/testthat/test-serve-tools.R:408:21-408:26"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:405:15-405:20"
+      "location": "tests/testthat/test-serve-tools.R:427:15-427:20"
     },
     {
       "name": "serve",
       "source": "tree_sitter_source_index",
       "role": "namespace_call",
-      "location": "tests/testthat/test-serve-tools.R:413:15-413:20"
+      "location": "tests/testthat/test-serve-tools.R:435:15-435:20"
     }
   ],
   "reference_semantics": "syntactic_impact_references",
@@ -2648,40 +2660,40 @@ tests, and export status.
   "related_test_count": 12,
   "related_tests": [
     {
-      "location": "tests/testthat/test-serve-tools.R:358-376",
+      "location": "tests/testthat/test-serve-tools.R:380-398",
       "desc": "serve uses explicit path without changing working directory",
       "hit_count": 2,
       "hits": [
-        "tests/testthat/test-serve-tools.R:358",
-        "tests/testthat/test-serve-tools.R:368"
+        "tests/testthat/test-serve-tools.R:380",
+        "tests/testthat/test-serve-tools.R:390"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:378-393",
+      "location": "tests/testthat/test-serve-tools.R:400-415",
       "desc": "serve defaults to the current working directory",
       "hit_count": 2,
       "hits": [
-        "tests/testthat/test-serve-tools.R:378",
-        "tests/testthat/test-serve-tools.R:386"
+        "tests/testthat/test-serve-tools.R:400",
+        "tests/testthat/test-serve-tools.R:408"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:395-400",
+      "location": "tests/testthat/test-serve-tools.R:417-422",
       "desc": "serve path normalization expands common path forms",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-serve-tools.R:395"
+        "tests/testthat/test-serve-tools.R:417"
       ]
     },
     {
-      "location": "tests/testthat/test-serve-tools.R:402-418",
+      "location": "tests/testthat/test-serve-tools.R:424-440",
       "desc": "serve path must be one existing directory",
       "hit_count": 4,
       "hits": [
-        "tests/testthat/test-serve-tools.R:402",
-        "tests/testthat/test-serve-tools.R:405",
-        "tests/testthat/test-serve-tools.R:411",
-        "tests/testthat/test-serve-tools.R:413"
+        "tests/testthat/test-serve-tools.R:424",
+        "tests/testthat/test-serve-tools.R:427",
+        "tests/testthat/test-serve-tools.R:433",
+        "tests/testthat/test-serve-tools.R:435"
       ]
     },
     {
@@ -2703,22 +2715,22 @@ tests, and export status.
       ]
     },
     {
-      "location": "tests/testthat/test-tool-help.R:219-227",
+      "location": "tests/testthat/test-tool-help.R:218-226",
       "desc": "help_page treats NULL and empty package as unspecified",
       "hit_count": 2,
       "hits": [
-        "tests/testthat/test-tool-help.R:220",
-        "tests/testthat/test-tool-help.R:221"
+        "tests/testthat/test-tool-help.R:219",
+        "tests/testthat/test-tool-help.R:220"
       ]
     },
     {
-      "location": "tests/testthat/test-tool-help.R:288-306",
+      "location": "tests/testthat/test-tool-help.R:287-305",
       "desc": "help_search returns ranked scoped matches for a valid query",
       "hit_count": 3,
       "hits": [
-        "tests/testthat/test-tool-help.R:289",
-        "tests/testthat/test-tool-help.R:291",
-        "tests/testthat/test-tool-help.R:302"
+        "tests/testthat/test-tool-help.R:288",
+        "tests/testthat/test-tool-help.R:290",
+        "tests/testthat/test-tool-help.R:301"
       ]
     },
     {
@@ -2757,24 +2769,24 @@ tests, and export status.
   ],
   "test_text_hit_count": 23,
   "test_text_hits": [
-    "tests/testthat/test-serve-tools.R:358",
-    "tests/testthat/test-serve-tools.R:368",
-    "tests/testthat/test-serve-tools.R:378",
-    "tests/testthat/test-serve-tools.R:386",
-    "tests/testthat/test-serve-tools.R:395",
-    "tests/testthat/test-serve-tools.R:402",
-    "tests/testthat/test-serve-tools.R:405",
-    "tests/testthat/test-serve-tools.R:411",
-    "tests/testthat/test-serve-tools.R:413",
+    "tests/testthat/test-serve-tools.R:380",
+    "tests/testthat/test-serve-tools.R:390",
+    "tests/testthat/test-serve-tools.R:400",
+    "tests/testthat/test-serve-tools.R:408",
+    "tests/testthat/test-serve-tools.R:417",
+    "tests/testthat/test-serve-tools.R:424",
+    "tests/testthat/test-serve-tools.R:427",
+    "tests/testthat/test-serve-tools.R:433",
+    "tests/testthat/test-serve-tools.R:435",
     "tests/testthat/test-tool-help.R:60",
     "tests/testthat/test-tool-help.R:62",
     "tests/testthat/test-tool-help.R:67",
     "tests/testthat/test-tool-help.R:176",
+    "tests/testthat/test-tool-help.R:219",
     "tests/testthat/test-tool-help.R:220",
-    "tests/testthat/test-tool-help.R:221",
-    "tests/testthat/test-tool-help.R:289",
-    "tests/testthat/test-tool-help.R:291",
-    "tests/testthat/test-tool-help.R:302",
+    "tests/testthat/test-tool-help.R:288",
+    "tests/testthat/test-tool-help.R:290",
+    "tests/testthat/test-tool-help.R:301",
     "tests/testthat/test-tool-package-docs.R:83",
     "tests/testthat/test-tool-package-docs.R:84",
     "tests/testthat/test-tool-package-namespace.R:16",
