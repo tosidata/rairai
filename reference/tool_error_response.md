@@ -17,7 +17,7 @@ tool_error_response(..., auto_unbox = TRUE)
 - auto_unbox:
 
   Passed to
-  [`jsonlite::toJSON()`](https://jeroen.r-universe.dev/jsonlite/reference/fromJSON.html).
+  [`jsonlite::toJSON()`](https://rdrr.io/pkg/jsonlite/man/fromJSON.html).
 
 ## Value
 

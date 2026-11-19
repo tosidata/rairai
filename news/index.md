@@ -4,6 +4,8 @@
 
 ## rairai 0.2.7
 
+CRAN release: 2026-11-18
+
 - Construct CRAN tool definitions when the server starts instead of
   during package installation.
 - Fix schema extraction in tests and the vignette with mcplite 0.2.0,
