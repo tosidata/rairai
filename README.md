@@ -1,5 +1,8 @@
 # rairai
 
+[![CRAN version](https://www.r-pkg.org/badges/version/rairai)](https://CRAN.R-project.org/package=rairai)
+[![R-CMD-check](https://github.com/tosidata/rairai/actions/workflows/R-CMD-check.yml/badge.svg?branch=main)](https://github.com/tosidata/rairai/actions/workflows/R-CMD-check.yml?query=branch%3Amain)
+
 `rairai` is a Model Context Protocol (MCP) server for R package development.
 
 ## Purpose
@@ -25,7 +28,7 @@ under inspection.
 
 ```r
 # pak::pak("tosidata/rairai") # development version
-install.packages("rairai") # After CRAN release
+install.packages("rairai")
 ```
 
 ## Quick start
