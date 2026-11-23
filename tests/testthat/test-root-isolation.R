@@ -431,9 +431,12 @@ test_that("symlink package root selectors report the canonical target", {
   parent <- withr::local_tempdir()
   default_root <- local_root_isolation_package(parent, "alphaPkg", "alpha")
   selected_root <- local_root_isolation_package(parent, "betaPkg", "beta")
-  selected_root <- normalizePath(selected_root, winslash = "/", mustWork = TRUE)
   alias <- file.path(parent, "beta-alias")
   create_test_symlink(selected_root, alias)
+  writeLines(
+    "invoke <- function(obj) obj$run()",
+    file.path(selected_root, "R", "invoke.R")
+  )
   state <- root_isolation_server_state(default_root)
 
   result <- root_isolation_tool_call(
@@ -446,6 +449,24 @@ test_that("symlink package root selectors report the canonical target", {
   expect_false(result$is_error)
   expect_equal(result$payload$package_root, selected_root)
   expect_equal(result$payload$description$fields$Package, "betaPkg")
+
+  references <- root_isolation_tool_call(
+    state,
+    "r6_method_references",
+    list(class = "betaClass", method = "run", package_root = alias)
+  )
+
+  expect_null(references$protocol_error)
+  expect_false(references$is_error)
+  expect_equal(references$payload$package_root, selected_root)
+  resolution <- references$payload$target_resolution
+  expect_equal(resolution$class$status, "unique")
+  expect_equal(resolution$method$status, "unique")
+  expect_equal(resolution$method$matches[[1L]]$location, "R/core.R:9")
+  expect_equal(
+    map_chr(references$payload$references, "location"),
+    "R/invoke.R:1"
+  )
 })
 
 test_that("served package-local tools route one call to a sibling root", {
