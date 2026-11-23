@@ -751,7 +751,7 @@ test_that("r6_method returns method_not_found when class exists but method absen
 # r6_method_references tests ---------------------------------------------------
 
 test_that("r6 member search parses each file once and targets only package classes", {
-  root <- withr::local_tempdir()
+  root <- normalizePath(withr::local_tempdir(), winslash = "/", mustWork = TRUE)
   fs::dir_create(fs::path(root, "R", "nested"))
   fs::dir_create(fs::path(root, "tests", "testthat", "nested"))
   writeLines(

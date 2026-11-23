@@ -14,13 +14,14 @@ test_that("path_to_uri percent-encodes file paths", {
 })
 
 test_that("uri_to_path decodes file URIs and restores relative paths", {
-  root_path <- tempfile("rairai-uri-root-")
-  path <- file.path("R", "space # percent % ää.R")
-  absolute_path <- normalizePath(
-    file.path(root_path, path),
+  parent <- normalizePath(
+    withr::local_tempdir(),
     winslash = "/",
-    mustWork = FALSE
+    mustWork = TRUE
   )
+  root_path <- paste0(parent, "//rairai-uri-root")
+  path <- file.path("R", "space # percent % ää.R")
+  absolute_path <- file.path(parent, "rairai-uri-root", path)
 
   uri <- path_to_uri(path, root_path = root_path)
 
