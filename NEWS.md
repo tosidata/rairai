@@ -1,5 +1,9 @@
 # rairai (development version)
 
+# rairai 0.2.8
+
+* Fix path-sensitive test fixtures on macOS and Windows. No changes to package behavior.
+
 # rairai 0.2.7
 
 * Construct CRAN tool definitions when the server starts instead of during package installation.

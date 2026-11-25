@@ -1,38 +1,3 @@
-run_from_tests_root <- function(expr) {
-  withr::with_dir(
-    testthat::test_path("..", ".."),
-    force(expr)
-  )
-}
-
-test_that("tests_for returns matches for a known symbol", {
-  result <- run_from_tests_root(
-    tool_result_json(
-      rairai:::tests_for("read_package_files"),
-      simplifyVector = FALSE
-    )
-  )
-
-  expect_equal(result$name, "read_package_files")
-  expect_gte(result$count, 1L)
-  expect_true(all(map_lgl(
-    result$matches,
-    function(m) str_starts(m$location, "tests/")
-  )))
-  expect_true(all(map_lgl(
-    result$matches,
-    function(m) str_detect(m$location, ":\\d+(?:-\\d+)?$")
-  )))
-  expect_true(all(map_lgl(
-    result$matches,
-    function(m) is.integer(m$hit_count) && m$hit_count >= 1L
-  )))
-  expect_true(all(map_lgl(
-    result$matches,
-    function(m) length(m$hits) == m$hit_count
-  )))
-})
-
 test_that("tests_for returns empty result when no tests directory exists", {
   withr::with_tempdir({
     result <- tool_result_json(
@@ -46,56 +11,38 @@ test_that("tests_for returns empty result when no tests directory exists", {
   })
 })
 
-test_that("tests_for returns nearest test_that description when available", {
-  result <- run_from_tests_root(
-    tool_result_json(
-      rairai:::tests_for("read_package_files"),
-      simplifyVector = FALSE
-    )
+test_that("tests_for reports a matching test block and its leading comments", {
+  root <- normalizePath(withr::local_tempdir(), winslash = "/", mustWork = TRUE)
+  test_dir <- file.path(root, "tests", "testthat")
+  dir.create(test_dir, recursive = TRUE)
+  writeLines(
+    c(
+      "#' test docs are just comments here",
+      "# regular comment",
+      "testthat::test_that('foo works', {",
+      "  testthat::expect_true(foo())",
+      "})"
+    ),
+    file.path(test_dir, "test-foo.R")
   )
 
-  expect_gte(result$count, 1L)
-  expect_true(any(map_lgl(
-    result$matches,
-    function(m) !is.null(m$desc) && nzchar(m$desc)
-  )))
-})
+  result <- tool_result_json(
+    rairai:::tests_for("foo", root_path = root),
+    simplifyVector = FALSE
+  )
 
-test_that("tests_for keeps exact locations separate from leading comments", {
-  withr::with_tempdir({
-    dir.create("tests/testthat", recursive = TRUE)
-    writeLines(
-      c(
-        "#' test docs are just comments here",
-        "# regular comment",
-        "testthat::test_that('foo works', {",
-        "  testthat::expect_true(foo())",
-        "})"
-      ),
-      "tests/testthat/test-foo.R"
-    )
-
-    result <- tool_result_json(
-      rairai:::tests_for("foo"),
-      simplifyVector = FALSE
-    )
-
-    locations <- map_chr(result$matches, "location")
-    expect_true("tests/testthat/test-foo.R:3-5" %in% locations)
-    expect_false(any(str_detect(locations, ":1-")))
-    expect_true(any(map_lgl(
-      result$matches,
-      function(m) !is.null(m$desc) && identical(m$desc, "foo works")
-    )))
-
-    match <- result$matches[[match("tests/testthat/test-foo.R:3-5", locations)]]
-    expect_equal(match$leading_comment_lines, "1-2")
-    expect_equal(match$hit_count, 2L)
-    expect_equal(
-      unlist(match$hits, use.names = FALSE),
-      c("tests/testthat/test-foo.R:3", "tests/testthat/test-foo.R:4")
-    )
-  })
+  expect_equal(result$name, "foo")
+  expect_equal(result$count, 1L)
+  expect_length(result$matches, 1L)
+  match <- result$matches[[1L]]
+  expect_equal(match$location, "tests/testthat/test-foo.R:3-5")
+  expect_equal(match$desc, "foo works")
+  expect_equal(match$leading_comment_lines, "1-2")
+  expect_identical(match$hit_count, 2L)
+  expect_equal(
+    unlist(match$hits, use.names = FALSE),
+    c("tests/testthat/test-foo.R:3", "tests/testthat/test-foo.R:4")
+  )
 })
 
 test_that("tests_for uses Tree-sitter ranges for multiline test blocks", {
@@ -250,11 +197,9 @@ test_that("tests_for keeps matches outside test blocks line-specific", {
 })
 
 test_that("tests_for returns error for empty name", {
-  result <- run_from_tests_root(
-    tool_result_json(
-      rairai:::tests_for(""),
-      simplifyVector = FALSE
-    )
+  result <- tool_result_json(
+    rairai:::tests_for(""),
+    simplifyVector = FALSE
   )
 
   expect_equal(as.character(unlist(result$error$code)), "missing_name")
