@@ -2,6 +2,13 @@
 
 ## rairai (development version)
 
+## rairai 0.2.8
+
+CRAN release: 2026-11-25
+
+- Fix path-sensitive test fixtures on macOS and Windows. No changes to
+  package behavior.
+
 ## rairai 0.2.7
 
 CRAN release: 2026-11-18

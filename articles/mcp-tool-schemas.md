@@ -94,7 +94,7 @@ namespace, file layout, docs, tests, and source objects.
     "fields": {
       "Package": "rairai",
       "Title": "Model Context Protocol Server for Package Intelligence",
-      "Version": "0.2.7",
+      "Version": "0.2.8",
       "Authors@R": "person(\"Juha\", \"Itkonen\", , \"juha@tosidata.com\", role = c(\"aut\", \"cre\"))",
       "Description": "Helps artificial intelligence (AI) agents develop 'R' packages\nmore efficiently and make better-informed code changes. Provides focused,\npackage-aware context through the Model Context Protocol (MCP) so agents\ncan understand existing behavior and assess changes with less manual\nexploration. Inspects packages without loading or executing their code.",
       "License": "MIT + file LICENSE",
@@ -251,7 +251,7 @@ namespace, file layout, docs, tests, and source objects.
     "frameworks": [
       "testthat"
     ],
-    "test_count": 283,
+    "test_count": 281,
     "snapshot_count": 0,
     "helper_file_count": 2,
     "fixture_dir_count": 0,
@@ -918,11 +918,11 @@ changing behavior to locate related tests.
       ]
     },
     {
-      "location": "tests/testthat/test-tool-find-test.R:263-269",
+      "location": "tests/testthat/test-tool-find-test.R:208-214",
       "desc": "tests_for is the registered public test-discovery tool",
       "hit_count": 1,
       "hits": [
-        "tests/testthat/test-tool-find-test.R:264"
+        "tests/testthat/test-tool-find-test.R:209"
       ]
     },
     {
@@ -1087,7 +1087,7 @@ vignettes, and NEWS.
     "source": "NEWS.md",
     "latest_version": "development version",
     "latest_heading": "rairai (development version)",
-    "version_count": 13
+    "version_count": 14
   },
   "next_tools": [
     {
@@ -1462,7 +1462,7 @@ Read package NEWS entries for release history and behavior changes.
     "truncated": false,
     "entries": []
   },
-  "count": 13,
+  "count": 14,
   "versions": [
     {
       "heading": "rairai (development version)",
@@ -1470,64 +1470,69 @@ Read package NEWS entries for release history and behavior changes.
       "location": "NEWS.md:1-2"
     },
     {
+      "heading": "rairai 0.2.8",
+      "version": "0.2.8",
+      "location": "NEWS.md:3-6"
+    },
+    {
       "heading": "rairai 0.2.7",
       "version": "0.2.7",
-      "location": "NEWS.md:3-8"
+      "location": "NEWS.md:7-12"
     },
     {
       "heading": "rairai 0.2.6",
       "version": "0.2.6",
-      "location": "NEWS.md:9-12"
+      "location": "NEWS.md:13-16"
     },
     {
       "heading": "rairai 0.2.5",
       "version": "0.2.5",
-      "location": "NEWS.md:13-16"
+      "location": "NEWS.md:17-20"
     },
     {
       "heading": "rairai 0.2.4",
       "version": "0.2.4",
-      "location": "NEWS.md:17-20"
+      "location": "NEWS.md:21-24"
     },
     {
       "heading": "rairai 0.2.3",
       "version": "0.2.3",
-      "location": "NEWS.md:21-24"
+      "location": "NEWS.md:25-28"
     },
     {
       "heading": "rairai 0.2.2",
       "version": "0.2.2",
-      "location": "NEWS.md:25-28"
+      "location": "NEWS.md:29-32"
     },
     {
       "heading": "rairai 0.2.1",
       "version": "0.2.1",
-      "location": "NEWS.md:29-32"
+      "location": "NEWS.md:33-36"
     },
     {
       "heading": "rairai 0.2.0",
       "version": "0.2.0",
-      "location": "NEWS.md:33-42"
+      "location": "NEWS.md:37-46"
     },
     {
       "heading": "rairai 0.1.2",
       "version": "0.1.2",
-      "location": "NEWS.md:43-46"
+      "location": "NEWS.md:47-50"
     },
     {
       "heading": "rairai 0.1.1",
       "version": "0.1.1",
-      "location": "NEWS.md:47-53"
+      "location": "NEWS.md:51-57"
     },
     {
       "heading": "rairai 0.1.0",
       "version": "0.1.0",
-      "location": "NEWS.md:54-59"
+      "location": "NEWS.md:58-63"
     },
     {
       "heading": "rairai 0.0.1",
       "version": "0.0.1",
-      "location": "NEWS.md:60-117"
+      "location": "NEWS.md:64-121"
     }
   ]
 }
