@@ -7,7 +7,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/tosidata/rairai/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/tosidata/rairai/blob/v0.2.8/DESCRIPTION)
 
 Itkonen J (2026). *rairai: Model Context Protocol Server for Package
 Intelligence*. R package version 0.2.8,
